@@ -1709,3 +1709,38 @@ Migrating to CreateFollowers (20200804064612)
   [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-08-04 08:06:56.634667"], ["updated_at", "2020-08-04 08:06:56.634667"]]
   [1m[35m (114.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "followers"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-08-04 08:13:51.446159"], ["updated_at", "2020-08-04 08:13:51.446159"]]
+  [1m[35m (72.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPhoto Create (0.8ms)[0m  [1m[32mINSERT INTO "photos" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 2], ["created_at", "2020-08-04 08:16:08.464390"], ["updated_at", "2020-08-04 08:16:08.464390"]]
+  [1m[35m (71.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReaction Create (2.0ms)[0m  [1m[32mINSERT INTO "reactions" ("react_id", "react_type", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["react_id", 1], ["react_type", "Photo"], ["created_at", "2020-08-04 08:17:50.270848"], ["updated_at", "2020-08-04 08:17:50.270848"]]
+  [1m[35m (90.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReaction Destroy (56.6ms)[0m  [1m[31mDELETE FROM "reactions" WHERE "reactions"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReaction Create (0.2ms)[0m  [1m[32mINSERT INTO "reactions" ("react_id", "react_type", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["react_id", 1], ["react_type", "Photo"], ["created_at", "2020-08-04 08:19:20.518157"], ["updated_at", "2020-08-04 08:19:20.518157"]]
+  [1m[35m (61.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPhoto Destroy (66.6ms)[0m  [1m[31mDELETE FROM "photos" WHERE "photos"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPhoto Create (0.8ms)[0m  [1m[32mINSERT INTO "photos" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 2], ["created_at", "2020-08-04 08:21:03.353307"], ["updated_at", "2020-08-04 08:21:03.353307"]]
+  [1m[35m (63.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPhoto Destroy (5013.3ms)[0m  [1m[31mDELETE FROM "photos" WHERE "photos"."id" = ?[0m  [["id", 2]]
+  [1m[36mPhoto Destroy (5013.9ms)[0m  [1m[31mDELETE FROM "photos" WHERE "photos"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAlbum Create (1.2ms)[0m  [1m[32mINSERT INTO "albums" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["created_at", "2020-08-04 08:25:28.882681"], ["updated_at", "2020-08-04 08:25:28.882681"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "albums"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAlbum Create (1.5ms)[0m  [1m[32mINSERT INTO "albums" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["created_at", "2020-08-04 08:27:26.916301"], ["updated_at", "2020-08-04 08:27:26.916301"]]
+  [1m[35m (90.9ms)[0m  [1m[36mcommit transaction[0m
