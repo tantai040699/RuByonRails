@@ -10,6 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_08_04_064612) do
+
+  create_table "albums", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "collection"
+    t.text "title"
+    t.text "desc"
+    t.boolean "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_albums_on_user_id"
+  end
+
+  create_table "followers", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_followers_on_user_id"
+  end
+
+  create_table "photo_albums", id: false, force: :cascade do |t|
+    t.integer "photo_id"
+    t.integer "album_id"
+    t.index ["album_id"], name: "index_photo_albums_on_album_id"
+    t.index ["photo_id"], name: "index_photo_albums_on_photo_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "image"
+    t.text "title"
+    t.text "desc"
+    t.boolean "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_photos_on_user_id"
+  end
+
+  create_table "reactions", force: :cascade do |t|
+    t.integer "react_id"
+    t.string "react_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "fname"
+    t.string "lname"
+    t.string "email"
+    t.string "password"
+    t.integer "following"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end

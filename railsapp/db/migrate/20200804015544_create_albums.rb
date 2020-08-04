@@ -5,6 +5,7 @@ class CreateAlbums < ActiveRecord::Migration[6.0]
       t.integer :collection
       t.text :title
       t.text :desc
+      t.boolean :status
       t.timestamps
     end
   end

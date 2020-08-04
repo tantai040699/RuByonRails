@@ -1,4 +1,3 @@
 class Reaction < ApplicationRecord
-    belongs_to :photo
-    belongs_to :album
+  belongs_to :react, polymorphic: true
 end
