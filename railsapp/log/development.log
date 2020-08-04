@@ -1596,3 +1596,116 @@ Migrating to CreateFollowers (20200804064612)
   [1m[35m (64.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-08-04 08:03:15.142660"], ["updated_at", "2020-08-04 08:03:15.142660"]]
+  [1m[35m (108.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-08-04 08:04:17.552390"], ["updated_at", "2020-08-04 08:04:17.552390"]]
+  [1m[35m (67.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-08-04 08:04:19.053973"], ["updated_at", "2020-08-04 08:04:19.053973"]]
+  [1m[35m (79.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-08-04 08:04:20.645033"], ["updated_at", "2020-08-04 08:04:20.645033"]]
+  [1m[35m (86.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-08-04 08:04:21.534523"], ["updated_at", "2020-08-04 08:04:21.534523"]]
+  [1m[35m (109.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-08-04 08:04:22.137822"], ["updated_at", "2020-08-04 08:04:22.137822"]]
+  [1m[35m (95.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-08-04 08:04:22.636699"], ["updated_at", "2020-08-04 08:04:22.636699"]]
+  [1m[35m (85.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-08-04 08:04:23.259516"], ["updated_at", "2020-08-04 08:04:23.259516"]]
+  [1m[35m (119.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (2.7ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-08-04 08:04:23.854729"], ["updated_at", "2020-08-04 08:04:23.854729"]]
+  [1m[35m (75.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-08-04 08:04:24.393361"], ["updated_at", "2020-08-04 08:04:24.393361"]]
+  [1m[35m (94.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFollowers (20200804064612)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "followers"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200804064612"]]
+  [1m[35m (64.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReactions (20200804064308)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "reactions"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200804064308"]]
+  [1m[35m (74.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePhotoAlbum (20200804020508)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "photo_albums"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200804020508"]]
+  [1m[35m (78.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAlbums (20200804015544)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "albums"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200804015544"]]
+  [1m[35m (74.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePhotos (20200804015540)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "photos"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200804015540"]]
+  [1m[35m (64.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20200804015531)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200804015531"]]
+  [1m[35m (64.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200804015531)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "fname" varchar, "lname" varchar, "email" varchar, "password" varchar, "following" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200804015531"]]
+  [1m[35m (71.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePhotos (20200804015540)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "image" varchar, "title" text, "desc" text, "status" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_photos_on_user_id" ON "photos" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200804015540"]]
+  [1m[35m (87.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAlbums (20200804015544)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "albums" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "collection" integer, "title" text, "desc" text, "status" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_albums_on_user_id" ON "albums" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200804015544"]]
+  [1m[35m (94.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePhotoAlbum (20200804020508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "photo_albums" ("photo_id" integer, "album_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_photo_albums_on_photo_id" ON "photo_albums" ("photo_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_photo_albums_on_album_id" ON "photo_albums" ("album_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200804020508"]]
+  [1m[35m (66.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReactions (20200804064308)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "reactions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "react_id" integer, "react_type" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200804064308"]]
+  [1m[35m (101.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateFollowers (20200804064612)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "followers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_followers_on_user_id" ON "followers" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200804064612"]]
+  [1m[35m (58.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-08-04 08:06:56.634667"], ["updated_at", "2020-08-04 08:06:56.634667"]]
+  [1m[35m (114.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
