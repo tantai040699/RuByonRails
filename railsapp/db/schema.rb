@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_04_064612) do
+ActiveRecord::Schema.define(version: 2020_08_05_153705) do
 
   create_table "albums", force: :cascade do |t|
     t.integer "user_id"
@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 2020_08_04_064612) do
     t.index ["user_id"], name: "index_albums_on_user_id"
   end
 
-  create_table "followers", force: :cascade do |t|
-    t.integer "user_id"
+  create_table "follows", id: false, force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_followers_on_user_id"
   end
 
   create_table "photo_albums", id: false, force: :cascade do |t|
@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 2020_08_04_064612) do
     t.string "lname"
     t.string "email"
     t.string "password"
-    t.integer "following"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
