@@ -60,6 +60,10 @@ ActiveRecord::Schema.define(version: 2020_08_05_153705) do
     t.string "lname"
     t.string "email"
     t.string "password"
+<<<<<<< HEAD
+=======
+    t.integer "following", default: 0
+>>>>>>> fd0f0ed5a8b521a5d8ce78500b58c8892897cf08
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
