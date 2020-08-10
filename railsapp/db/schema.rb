@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_05_153705) do
+ActiveRecord::Schema.define(version: 2020_08_06_084257) do
 
   create_table "albums", force: :cascade do |t|
     t.integer "user_id"
@@ -23,18 +23,20 @@ ActiveRecord::Schema.define(version: 2020_08_05_153705) do
     t.index ["user_id"], name: "index_albums_on_user_id"
   end
 
+  create_table "albums_photos", force: :cascade do |t|
+    t.integer "photo_id"
+    t.integer "album_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["album_id"], name: "index_albums_photos_on_album_id"
+    t.index ["photo_id"], name: "index_albums_photos_on_photo_id"
+  end
+
   create_table "follows", id: false, force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "photo_albums", id: false, force: :cascade do |t|
-    t.integer "photo_id"
-    t.integer "album_id"
-    t.index ["album_id"], name: "index_photo_albums_on_album_id"
-    t.index ["photo_id"], name: "index_photo_albums_on_photo_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -60,10 +62,6 @@ ActiveRecord::Schema.define(version: 2020_08_05_153705) do
     t.string "lname"
     t.string "email"
     t.string "password"
-<<<<<<< HEAD
-=======
-    t.integer "following", default: 0
->>>>>>> fd0f0ed5a8b521a5d8ce78500b58c8892897cf08
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

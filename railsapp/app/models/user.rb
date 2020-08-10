@@ -13,9 +13,9 @@ class User < ApplicationRecord
 
 
     #validate
-    validates :fname, :lname, :email, :password , presence: true
-    validates :fname, :lname, length: { maximum:25}
-    validates :email, length: {maximum:255}, uniqueness: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
-    validates :password, length: {maximum:64}, confirmation: true
+    # validates :fname, :lname, :email, :password , presence: true
+    # validates :fname, :lname, length: { maximum:25}
+    # validates :email, length: {maximum:255}, uniqueness: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
+    # validates :password, length: {maximum:64}, confirmation: true
 
 end

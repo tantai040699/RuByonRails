@@ -1,14 +1,14 @@
 class Photo < ApplicationRecord
-    has_and_belongs_to_many :albums
+    has_many :photos, through: :albums_photos
     belongs_to :user
     has_many :reactions ,as: :react, dependent: :destroy
 
-    validates :title, :desc, :status, :image, presence: true
-    validates :title, length: {maximum:140}
-    validates :desc, length: {maximum:300}
-    validates :status, acceptance: {accept: ['private','public']}
-    validates :image, format: {with: /\.(png|jpeq|gif)\Z/i}
-    validate :image_size_validation
+    # validates :title, :desc, :status, :image, presence: true
+    # validates :title, length: {maximum:140}
+    # validates :desc, length: {maximum:300}
+    # validates :status, acceptance: {accept: ['private','public']}
+    # validates :image, format: {with: /\.(png|jpeq|gif)\Z/i}
+    # validate :image_size_validation
 
 
     private
