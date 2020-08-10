@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  root 'user_sign_up#index'
+  root 'user_login/index'
+  get  'user_sign_up#index'
   #User Signup Controller :
   resources :user_sign_up, only: :create
   # #User Login Controller :
-  # resources :login, only: :index
+  resources :user_login, only: :index
   # # Photo, ALbums Controller :
   # resources :photo , :album
   # #feed,discovery Controller : homepage
