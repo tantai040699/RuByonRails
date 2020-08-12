@@ -4,6 +4,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-position: center;
     background: #FFFFFF;
+    font-size: 18px;
 }
 
 .navbar_bg {
@@ -99,3 +100,38 @@ body {
 a {
     font-size: 0.8em;
 }
+.photos_to_albums {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+ }  
+ .but {
+     margin-bottom: 20px;
+     margin-top: 10px;
+ }
+ /* .user {
+     display: inline;
+ } */
+ .user #image {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background: #3c5a96;
+    color: #FFF;
+    padding-top: 3px;
+    padding-left: 5px;
+ }
+ .user #name_user {
+    padding-left: 10px;
+    padding-top: 5px;
+ }
+ .menu ul li {
+     font-size: 22px;
+     font-weight: 600;
+     list-style: none;
+
+ }
+ .menu{
+     position: fixed;
+     margin-top: 20px;
+ }

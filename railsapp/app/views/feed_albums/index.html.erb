@@ -1,0 +1,68 @@
+<div class="container-fluid navbar_bg">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-sm navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-search"></i>
+                  </button>
+                <a class="navbar-brand" href="#">Fotobook</a>
+                <div class="collapse navbar-collapse">
+                    <form class="form  my-0 custom_input">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search Photo/Album" aria-label="Search">
+                    </form>
+                </div>
+                <a class="navbar-brand navbar-brand_login" href="login.html">Login</a>
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="collapse navbar-collapse response_Search" id="navbarTogglerDemo01">
+            <form class="form  my-0 reponse_input">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search Photo/Album" aria-label="Search">
+            </form>
+        </div>
+    </div>
+    
+   <div class="menu">
+        <ul>
+            <li><%= link_to "Feed", feed_index_path, {style: 'font-size: 20px;  color: black; text-decoration: none' } %></li>
+            <li>Discover</li>
+        </ul>
+    </div>
+    <div class="container">
+     <div class="row photos_to_albums">
+        <div class="btn-group btn-group-lg but" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-sm pagebut" style="border: 2px solid #3c5a96"> <%= link_to "Photos", feed_index_path, {style: 'font-size: 20px;  color:#3c5a96; text-decoration: none' }  %> </button>
+            <button type="button" class="btn btn-sm pagebut" style="background:#3c5a96; color:#FFF">Albums</button>
+          </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+        <% @albums.each do |album|%>
+            <div class="col-12 col-sm-6 col-md-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                      <div class="col-md-6">
+                        <img src="https://i.pinimg.com/564x/e5/7c/4b/e57c4b70a4c3674069be6f4aa3cd967f.jpg" class="card-img" alt="">
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card-body">
+                          <div  class="user d-flex">
+                            <div id="image">TT</div>  <span id="name_user"><%= album.user.fname%> <%=album.user.lname %></span>
+                           
+                          </div>  
+                          <h5 class="card-title"><%= album.title%></h5>
+                          <p class="card-text"><%= album.desc%></p>
+                          <p class="card-text"><small class="text-muted"><%= album.created_at%></small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        <% end%>
+        </div>
+    </div>

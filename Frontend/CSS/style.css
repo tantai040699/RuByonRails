@@ -99,8 +99,14 @@ body {
 a {
     font-size: 0.8em;
 }
+
 .group {
     /* margin-bottom: 10px;
     margin-left: 15px; */
     background-color:red;
 }
+ .but {
+     position: relative;
+     left: 40%;
+     margin-bottom: 10px;
+ }
