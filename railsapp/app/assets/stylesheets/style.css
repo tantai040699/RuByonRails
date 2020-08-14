@@ -135,3 +135,9 @@ a {
      margin-top: 20px;
      color: #3c5a96;
  }
+/* modal */
+ body.modal-open .op{
+    filter: blur(5px);
+ }
+ 
+

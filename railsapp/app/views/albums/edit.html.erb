@@ -1,0 +1,19 @@
+<div class="container">
+
+<div>
+  <% @album.errors.full_messages.each do |msg|%>
+
+  <h4> <%=msg %></h4>
+
+  <% end %>
+</div>
+
+
+
+<%= form_for @album, method: :put do |f| %>
+  Title: <%= f.text_field :title %><br />
+  
+  <%= f.submit%>
+<% end %>
+
+</div>

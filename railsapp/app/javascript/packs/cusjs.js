@@ -65,13 +65,42 @@
 // //     });
 // // });
 
+
+
+
+
+
+
+
 $(document).ready(function() {
-    $('#cus').click(function() {
-        alert('123');
 
-    })
-    // var img = $(this).attr(src);
-    // $('#modal-img').attr('src',img);
-   
+    $('.cus').click(function() {
+        var img = $(this).attr('src');
+        var title = $(this).text();
+        var desc = $('.cusdesc').text();
 
+        $('#modal-title').text(title);
+        $('#modal-img').attr('src',img);
+        $('#modal-desc').text(desc);
+    });
+    //end modal
+
+        
+
+    $("#edit_album_3").validate({
+                rules: {
+                    'album[title]': {
+                        required: true,
+                    }
+                },
+                messages:{
+                    'album[title]': { 
+                        required: "Title can be blank!!!",
+                    }   
+                }
+    });
+    $("button").click(function(e) {
+                $("#edit_album_3").submit();
+        
+            });
 });
