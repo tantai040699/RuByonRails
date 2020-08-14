@@ -48515,3 +48515,656 @@ ld!!!=0D
 Follow my link: https://www.facebook.com/tan.tai.9406/=
 
 [ActiveJob] [ActionMailer::MailDeliveryJob] [68dfbf62-e467-460c-9858-655d8a046a96] Performed ActionMailer::MailDeliveryJob (Job ID: 68dfbf62-e467-460c-9858-655d8a046a96) from Async(mailers) in 3353.64ms
+Started POST "/users" for ::1 at 2020-08-14 16:26:28 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dKAT2zGTslLx95RDPdPaYBwJhu1ZNESmE7PpDwR0l8vf+2SLTaBQHdGy8okVbvXvSdp9njM2Ujmtf674TV5dOg==", "user"=>{"fname"=>"NGuyễn", "lname"=>"áds", "email"=>"tantai9991@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("fname", "lname", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["fname", "NGuyễn"], ["lname", "áds"], ["email", "tantai9991@gmail.com"], ["password", "123"], ["created_at", "2020-08-14 09:26:28.160530"], ["updated_at", "2020-08-14 09:26:28.160530"]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[35m (79.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Redirected to http://localhost:3000/photos
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: e9cdcc7b-bf04-4b7d-b1d4-1dfe3be228be) to Async(mailers) with arguments: "UserMailer", "welcome_email", "deliver_now", {:args=>[#<GlobalID:0x00007f6b701006e8 @uri=#<URI::GID gid://fotobook/User/18>>]}
+Completed 302 Found in 121ms (ActiveRecord: 81.0ms | Allocations: 15266)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/photos" for ::1 at 2020-08-14 16:26:28 +0700
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e9cdcc7b-bf04-4b7d-b1d4-1dfe3be228be] Performing ActionMailer::MailDeliveryJob (Job ID: e9cdcc7b-bf04-4b7d-b1d4-1dfe3be228be) from Async(mailers) enqueued at 2020-08-14T09:26:28Z with arguments: "UserMailer", "welcome_email", "deliver_now", {:args=>[#<GlobalID:0x00007f6b4004fb70 @uri=#<URI::GID gid://fotobook/User/18>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e9cdcc7b-bf04-4b7d-b1d4-1dfe3be228be]   Rendering user_mailer/welcome_email.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e9cdcc7b-bf04-4b7d-b1d4-1dfe3be228be]   Rendered user_mailer/welcome_email.text.erb (Duration: 0.1ms | Allocations: 10)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e9cdcc7b-bf04-4b7d-b1d4-1dfe3be228be] UserMailer#welcome_email: processed outbound mail in 1.3ms
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 11127)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 25.1ms | ActiveRecord: 1.1ms | Allocations: 20685)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e9cdcc7b-bf04-4b7d-b1d4-1dfe3be228be] Delivered mail 5f3658c459089_6a4a5cbc184b7@tantai-Aspire-VX5-591G.mail (3390.5ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e9cdcc7b-bf04-4b7d-b1d4-1dfe3be228be] Date: Fri, 14 Aug 2020 16:26:28 +0700
+From: gagage@gmail.com
+To: tantai9991@gmail.com
+Message-ID: <5f3658c459089_6a4a5cbc184b7@tantai-Aspire-VX5-591G.mail>
+Subject: Welcome to My Facebook!!! Addfriend me !!!
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Congrats NGuy=E1=BB=85n =C3=A1ds,=0D
+=0D
+Your email is tantai9991@gmail.com=0D
+You have successfully registered your account. Welcome to NUS fucking wor=
+ld!!!=0D
+=0D
+Follow my link: https://www.facebook.com/tan.tai.9406/=
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e9cdcc7b-bf04-4b7d-b1d4-1dfe3be228be] Performed ActionMailer::MailDeliveryJob (Job ID: e9cdcc7b-bf04-4b7d-b1d4-1dfe3be228be) from Async(mailers) in 3396.13ms
+Started GET "/users" for ::1 at 2020-08-14 16:39:30 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 153)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 8614)
+
+
+Started GET "/photos" for ::1 at 2020-08-14 16:39:32 +0700
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 37.6ms | Allocations: 18093)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 67ms (Views: 52.4ms | ActiveRecord: 1.0ms | Allocations: 27833)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:40:16 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.0ms | Allocations: 8573)
+
+
+Started GET "/photos" for ::1 at 2020-08-14 16:40:18 +0700
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 28.7ms | Allocations: 6718)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 42.0ms | ActiveRecord: 1.4ms | Allocations: 14721)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:40:52 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 148)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 0.0ms | Allocations: 8567)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:41:03 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 34.7ms | ActiveRecord: 0.0ms | Allocations: 8550)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:41:03 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 48)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.0ms | Allocations: 7463)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:41:04 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 7453)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:41:04 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 7451)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:41:04 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 7449)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:41:04 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 7465)
+
+
+Started GET "/photos" for ::1 at 2020-08-14 16:41:05 +0700
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 30.2ms | Allocations: 6720)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 42.3ms | ActiveRecord: 1.5ms | Allocations: 14739)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:41:21 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 148)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 8559)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:41:39 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.0ms | Allocations: 8554)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:41:39 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 48)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 7468)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:41:40 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.0ms | Allocations: 7447)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:42:14 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 0.0ms | Allocations: 8565)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:42:15 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 48)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 7451)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:42:15 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 7464)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:42:30 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 147)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.0ms | Allocations: 8578)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:42:30 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 48)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 7460)
+
+
+Started GET "/photos" for ::1 at 2020-08-14 16:42:31 +0700
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 19.9ms | Allocations: 6719)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 31.0ms | ActiveRecord: 1.6ms | Allocations: 14729)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:43:12 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.0ms | Allocations: 8567)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:43:12 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 48)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.0ms | Allocations: 7455)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:43:13 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 7461)
+
+
+Started GET "/photos" for ::1 at 2020-08-14 16:43:35 +0700
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 6718)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 35.6ms | ActiveRecord: 0.6ms | Allocations: 14725)
+
+
+Started GET "/albums" for ::1 at 2020-08-14 16:43:38 +0700
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" ORDER BY "albums"."created_at" ASC[0m
+  ↳ app/views/albums/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/albums/index.html.erb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/albums/index.html.erb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/albums/index.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/albums/index.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/albums/index.html.erb:41
+  Rendered albums/index.html.erb within layouts/application (Duration: 20.4ms | Allocations: 9331)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 31.6ms | ActiveRecord: 1.8ms | Allocations: 19009)
+
+
+Started GET "/photos" for ::1 at 2020-08-14 16:43:39 +0700
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 23.7ms | Allocations: 6435)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 1.1ms | Allocations: 13866)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:44:13 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 145)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 8569)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:44:35 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 145)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 0.0ms | Allocations: 8559)
+
+
+Started GET "/photos" for ::1 at 2020-08-14 16:44:36 +0700
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 24.7ms | Allocations: 6718)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 1.3ms | Allocations: 14729)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:45:27 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 147)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 38.2ms | ActiveRecord: 0.0ms | Allocations: 8578)
+
+
+Started GET "/photos" for ::1 at 2020-08-14 16:45:28 +0700
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 25.3ms | Allocations: 6719)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 41.7ms | ActiveRecord: 1.3ms | Allocations: 14741)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:45:45 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 142)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.0ms | Allocations: 8552)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:45:54 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.0ms | Allocations: 8581)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:46:31 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 143)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 8547)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:46:32 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 48)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 7463)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:46:32 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 7451)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:46:38 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 148)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 8573)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:47:14 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.0ms | Allocations: 8567)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:47:14 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 48)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 7456)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:47:15 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.0ms | Allocations: 7451)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:47:15 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 7451)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:47:44 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 8561)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:47:51 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 143)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 0.0ms | Allocations: 8556)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:48:58 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 145)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 38.2ms | ActiveRecord: 0.0ms | Allocations: 8579)
+
+
+Started GET "/photos" for ::1 at 2020-08-14 16:49:00 +0700
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 28.1ms | Allocations: 6719)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 44.3ms | ActiveRecord: 1.3ms | Allocations: 14739)
+
+
+Started GET "/users" for ::1 at 2020-08-14 16:49:17 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.0ms | Allocations: 8558)
+
+
+Started GET "/photos" for ::1 at 2020-08-14 16:49:18 +0700
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 27.4ms | Allocations: 6718)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 42.1ms | ActiveRecord: 1.2ms | Allocations: 14719)
+
+

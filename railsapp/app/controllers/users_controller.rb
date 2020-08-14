@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   after_action :log_user_saved_to_db, only: :create
+  
+  def index
+    
+  end
+  
 
   def new
     @user = User.new
@@ -9,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       
       flash[:success] = "Register success"
-      redirect_to photos_path
+      redirect_to users_path
     else
       flash[:success] = "Register failed"
       render :new
