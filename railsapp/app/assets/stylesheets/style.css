@@ -139,5 +139,11 @@ a {
  body.modal-open .op{
     filter: blur(5px);
  }
- 
-
+ .custitle {
+     margin-top: 10px;
+ }
+ .edit-albums-form {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+ }

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   
-  root 'photo#index'
+  get 'logins/index'
+  root 'users#new'
 
   # get 'user_login/index'
   # get  'user_sign_up/index'
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
   # # #User Login Controller :
   # resources :user_login, only: :index
   # # Photo, ALbums Controller :
-  resources :photo , :albums
+  resources :photos , :albums, :users
 
 
   # #feed,discovery Controller : homepage

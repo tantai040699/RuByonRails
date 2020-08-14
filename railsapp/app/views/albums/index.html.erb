@@ -1,10 +1,10 @@
-  <div class="container-fluid op">
+  <div class="container-fluid op ">
     <div class="row pt-1 out-card">
       <div class="col-12 col-sm-2 p-0">
         <div class="menu left-col d-flex">
           <ul class="list pt-4">
             <li>Feed</li>
-            <li><%= link_to "Discover",  photo_index_path, {style: 'font-size: 20px;  color: black; text-decoration: none' } %></li>
+            <li><%= link_to "Discover",  photos_path, {style: 'font-size: 20px;  color: black; text-decoration: none' } %></li>
           </ul>
         </div>
       </div>
@@ -14,7 +14,7 @@
           <div class="pt-4 pb-4">
             <div class="row photos_to_albums">
               <div class="btn-group btn-group-lg but" role="group" aria-label="Basic example">
-                <button type="button" class="btn pagebut " style="border: 2px solid #3c5a96"><%= link_to "Photos", photo_index_path, {style: 'font-size: 20px;  color: #3c5a96 ; text-decoration: none' } %></button>
+                <button type="button" class="btn pagebut " style="border: 2px solid #3c5a96"><%= link_to "Photos", photos_path, {style: 'font-size: 20px;  color: #3c5a96 ; text-decoration: none' } %></button>
                 <button type="button" class="btn pagebut"style="background:#3c5a96; color:#FFF ">Albums</button>
               </div>
             </div>

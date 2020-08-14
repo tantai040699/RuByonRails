@@ -74,6 +74,8 @@
 
 $(document).ready(function() {
 
+
+
     $('.cus').click(function() {
         var img = $(this).attr('src');
         var title = $(this).text();
