@@ -40658,3 +40658,87 @@ Processing by AlbumsController#index as HTML
 Completed 200 OK in 55ms (Views: 45.9ms | ActiveRecord: 2.0ms | Allocations: 27343)
 
 
+Started GET "/albums/3/edit" for ::1 at 2020-08-14 10:13:35 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.7ms | Allocations: 684)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/tantai/Desktop/RuByonRails/railsapp/public/packs
+[Webpacker] Hash: 26426462fd18df5dd872
+Version: webpack 4.44.1
+Time: 1154ms
+Built at: 2020-08-14 10:13:38
+                                       Asset        Size         Chunks                         Chunk Names
+      js/application-1b7bebdd84e4ba0c308f.js     662 KiB    application  [emitted] [immutable]  application
+  js/application-1b7bebdd84e4ba0c308f.js.map     779 KiB    application  [emitted] [dev]        application
+            js/cusjs-b74e218df2213a409569.js     317 KiB          cusjs  [emitted] [immutable]  cusjs
+        js/cusjs-b74e218df2213a409569.js.map     374 KiB          cusjs  [emitted] [dev]        cusjs
+    js/jq_validation-45ddb942a709ab0963f6.js     370 KiB  jq_validation  [emitted] [immutable]  jq_validation
+js/jq_validation-45ddb942a709ab0963f6.js.map     437 KiB  jq_validation  [emitted] [dev]        jq_validation
+                               manifest.json  1010 bytes                 [emitted]              
+Entrypoint application = js/application-1b7bebdd84e4ba0c308f.js js/application-1b7bebdd84e4ba0c308f.js.map
+Entrypoint cusjs = js/cusjs-b74e218df2213a409569.js js/cusjs-b74e218df2213a409569.js.map
+Entrypoint jq_validation = js/jq_validation-45ddb942a709ab0963f6.js js/jq_validation-45ddb942a709ab0963f6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 802 bytes {application} [built]
+[./app/javascript/packs/cusjs.js] 2.84 KiB {cusjs} {application} [built]
+[./app/javascript/packs/jq_validation.js] 49 bytes {jq_validation} {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {cusjs} {jq_validation} [built]
+    + 6 hidden modules
+
+Completed 200 OK in 2252ms (Views: 2243.1ms | ActiveRecord: 0.1ms | Allocations: 15838)
+
+
+Started GET "/albums/2/edit" for ::1 at 2020-08-14 10:15:11 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 1.7ms | Allocations: 401)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.1ms | Allocations: 8305)
+
+
+Started GET "/albums/2/edit" for ::1 at 2020-08-14 10:15:29 +0700
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:12:in `edit'
+  Rendering albums/edit.html.erb within layouts/application
+  Rendered albums/edit.html.erb within layouts/application (Duration: 5.0ms | Allocations: 401)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/tantai/Desktop/RuByonRails/railsapp/public/packs
+[Webpacker] Hash: 7fcc748af3375a012fb7
+Version: webpack 4.44.1
+Time: 1056ms
+Built at: 2020-08-14 10:15:31
+                                       Asset        Size         Chunks                         Chunk Names
+      js/application-34c799d913ff942e735c.js     662 KiB    application  [emitted] [immutable]  application
+  js/application-34c799d913ff942e735c.js.map     779 KiB    application  [emitted] [dev]        application
+            js/cusjs-530f38d53da1110dae9e.js     317 KiB          cusjs  [emitted] [immutable]  cusjs
+        js/cusjs-530f38d53da1110dae9e.js.map     374 KiB          cusjs  [emitted] [dev]        cusjs
+    js/jq_validation-45ddb942a709ab0963f6.js     370 KiB  jq_validation  [emitted] [immutable]  jq_validation
+js/jq_validation-45ddb942a709ab0963f6.js.map     437 KiB  jq_validation  [emitted] [dev]        jq_validation
+                               manifest.json  1010 bytes                 [emitted]              
+Entrypoint application = js/application-34c799d913ff942e735c.js js/application-34c799d913ff942e735c.js.map
+Entrypoint cusjs = js/cusjs-530f38d53da1110dae9e.js js/cusjs-530f38d53da1110dae9e.js.map
+Entrypoint jq_validation = js/jq_validation-45ddb942a709ab0963f6.js js/jq_validation-45ddb942a709ab0963f6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 802 bytes {application} [built]
+[./app/javascript/packs/cusjs.js] 2.84 KiB {cusjs} {application} [built]
+[./app/javascript/packs/jq_validation.js] 49 bytes {jq_validation} {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {cusjs} {jq_validation} [built]
+    + 6 hidden modules
+
+Completed 200 OK in 2302ms (Views: 2297.9ms | ActiveRecord: 0.3ms | Allocations: 9538)
+
+

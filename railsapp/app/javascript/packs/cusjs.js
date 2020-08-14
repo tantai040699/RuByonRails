@@ -87,7 +87,7 @@ $(document).ready(function() {
 
         
 
-    $("#edit_album_3").validate({
+    $(".edit_album").validate({
                 rules: {
                     'album[title]': {
                         required: true,
@@ -99,8 +99,4 @@ $(document).ready(function() {
                     }   
                 }
     });
-    $("button").click(function(e) {
-                $("#edit_album_3").submit();
-        
-            });
 });
