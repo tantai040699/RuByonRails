@@ -18,4 +18,12 @@ class User < ApplicationRecord
     # validates :email, length: {maximum:255}, uniqueness: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
     # validates :password, length: {maximum:64}, confirmation: true
 
+
+
+    #callback
+    after_create :log_user_saved_to_db
+private
+    def log_user_saved_to_db
+        UserMailer.welcome_email(self).deliver_later
+    end
 end

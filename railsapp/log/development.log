@@ -49168,3 +49168,335 @@ Processing by PhotosController#index as HTML
 Completed 200 OK in 45ms (Views: 42.1ms | ActiveRecord: 1.2ms | Allocations: 14719)
 
 
+Started GET "/users" for ::1 at 2020-08-14 17:05:34 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 148)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 8540)
+
+
+Started GET "/" for ::1 at 2020-08-14 17:05:40 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1024)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 15793)
+
+
+Started POST "/users" for ::1 at 2020-08-14 17:05:46 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"1cPWpr8Jfw0Ij8+T0YMT88WYhu2x1qw00boCP+x1OgZ+mKH2wzqdQijKqVn5Pjx8kEt9ntvUuqtvdkXIpV/w9w==", "user"=>{"fname"=>"NGuyễn", "lname"=>"Tài", "email"=>"tantai9991@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("fname", "lname", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["fname", "NGuyễn"], ["lname", "Tài"], ["email", "tantai9991@gmail.com"], ["password", "123"], ["created_at", "2020-08-14 10:05:46.203078"], ["updated_at", "2020-08-14 10:05:46.203078"]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (176.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 41960c75-eddc-4a22-9a1b-555ffbf05373) to Async(mailers) with arguments: "UserMailer", "welcome_email", "deliver_now", {:args=>[nil]}
+Redirected to http://localhost:3000/users
+[ActiveJob] [ActionMailer::MailDeliveryJob] [41960c75-eddc-4a22-9a1b-555ffbf05373] Performing ActionMailer::MailDeliveryJob (Job ID: 41960c75-eddc-4a22-9a1b-555ffbf05373) from Async(mailers) enqueued at 2020-08-14T10:05:46Z with arguments: "UserMailer", "welcome_email", "deliver_now", {:args=>[nil]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [41960c75-eddc-4a22-9a1b-555ffbf05373] UserMailer#welcome_email: processed outbound mail in 3.1ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [41960c75-eddc-4a22-9a1b-555ffbf05373] Error performing ActionMailer::MailDeliveryJob (Job ID: 41960c75-eddc-4a22-9a1b-555ffbf05373) from Async(mailers) in 5.71ms: NoMethodError (undefined method `email' for nil:NilClass):
+/home/tantai/Desktop/RuByonRails/railsapp/app/mailers/user_mailer.rb:6:in `welcome_email'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionpack-6.0.3.2/lib/abstract_controller/base.rb:195:in `process_action'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionpack-6.0.3.2/lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:101:in `run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionpack-6.0.3.2/lib/abstract_controller/callbacks.rb:41:in `process_action'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionpack-6.0.3.2/lib/abstract_controller/base.rb:136:in `process'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/rescuable.rb:25:in `block in process'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/rescuable.rb:24:in `process'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionview-6.0.3.2/lib/action_view/rendering.rb:39:in `process'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/base.rb:637:in `block in process'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/notifications.rb:180:in `block in instrument'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/notifications.rb:180:in `instrument'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/base.rb:636:in `process'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/message_delivery.rb:124:in `block in processed_mailer'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/message_delivery.rb:123:in `tap'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/message_delivery.rb:123:in `processed_mailer'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/message_delivery.rb:114:in `deliver_now'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/mail_delivery_job.rb:23:in `perform'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/execution.rb:40:in `block in perform_now'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:112:in `block in run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/i18n-1.8.5/lib/i18n.rb:313:in `with_locale'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `instance_exec'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `instance_exec'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/logging.rb:25:in `block (4 levels) in <module:Logging>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/notifications.rb:180:in `block in instrument'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/notifications.rb:180:in `instrument'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/logging.rb:24:in `block (3 levels) in <module:Logging>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/logging.rb:45:in `block in tag_logger'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/tagged_logging.rb:80:in `block in tagged'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/tagged_logging.rb:28:in `tagged'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/tagged_logging.rb:80:in `tagged'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/logging.rb:45:in `tag_logger'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/logging.rb:21:in `block (2 levels) in <module:Logging>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `instance_exec'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:139:in `run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/execution.rb:39:in `perform_now'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/execution.rb:25:in `block in execute'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:112:in `block in run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/railtie.rb:43:in `block (4 levels) in <class:Railtie>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/execution_wrapper.rb:88:in `wrap'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/reloader.rb:72:in `block in wrap'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/execution_wrapper.rb:88:in `wrap'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/reloader.rb:71:in `wrap'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/railtie.rb:42:in `block (3 levels) in <class:Railtie>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `instance_exec'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:139:in `run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/execution.rb:23:in `execute'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/concurrent-ruby-1.1.6/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:353:in `run_task'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/concurrent-ruby-1.1.6/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:342:in `block (3 levels) in create_worker'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/concurrent-ruby-1.1.6/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:325:in `loop'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/concurrent-ruby-1.1.6/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:325:in `block (2 levels) in create_worker'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/concurrent-ruby-1.1.6/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:324:in `catch'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/concurrent-ruby-1.1.6/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:324:in `block in create_worker'
+Completed 302 Found in 218ms (ActiveRecord: 177.8ms | Allocations: 8364)
+
+
+Started GET "/users" for ::1 at 2020-08-14 17:05:46 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 44)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.0ms | Allocations: 7475)
+
+
+Started GET "/photos" for ::1 at 2020-08-14 17:05:54 +0700
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 40.0ms | Allocations: 11264)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 52.8ms | ActiveRecord: 0.9ms | Allocations: 20698)
+
+
+Started GET "/" for ::1 at 2020-08-14 17:06:38 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 679)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 16.6ms | ActiveRecord: 1.3ms | Allocations: 15793)
+
+
+Started POST "/users" for ::1 at 2020-08-14 17:06:42 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"rWajKZbONat4992izFLWxAkx7r6zTeB2iJVdjQ/D3Q4GPdR56v3X5Fiyu2jk7/lLXOIVzdlP9uk2WRp6RukX/w==", "user"=>{"fname"=>"NGuyễn", "lname"=>"Tài", "email"=>"tantai9991@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("fname", "lname", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["fname", "NGuyễn"], ["lname", "Tài"], ["email", "tantai9991@gmail.com"], ["password", "123"], ["created_at", "2020-08-14 10:06:42.744897"], ["updated_at", "2020-08-14 10:06:42.744897"]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 091b1dce-3175-4bc3-b946-ff62c229a698) to Async(mailers) with arguments: "UserMailer", "welcome_email", "deliver_now", {:args=>[nil]}
+  [1m[35m (83.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [091b1dce-3175-4bc3-b946-ff62c229a698] Performing ActionMailer::MailDeliveryJob (Job ID: 091b1dce-3175-4bc3-b946-ff62c229a698) from Async(mailers) enqueued at 2020-08-14T10:06:42Z with arguments: "UserMailer", "welcome_email", "deliver_now", {:args=>[nil]}
+  ↳ app/controllers/users_controller.rb:13:in `create'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [091b1dce-3175-4bc3-b946-ff62c229a698] UserMailer#welcome_email: processed outbound mail in 2.6ms
+Redirected to http://localhost:3000/users
+Completed 302 Found in 143ms (ActiveRecord: 84.9ms | Allocations: 9649)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [091b1dce-3175-4bc3-b946-ff62c229a698] Error performing ActionMailer::MailDeliveryJob (Job ID: 091b1dce-3175-4bc3-b946-ff62c229a698) from Async(mailers) in 7.85ms: NoMethodError (undefined method `email' for nil:NilClass):
+/home/tantai/Desktop/RuByonRails/railsapp/app/mailers/user_mailer.rb:6:in `welcome_email'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionpack-6.0.3.2/lib/abstract_controller/base.rb:195:in `process_action'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionpack-6.0.3.2/lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:101:in `run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionpack-6.0.3.2/lib/abstract_controller/callbacks.rb:41:in `process_action'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionpack-6.0.3.2/lib/abstract_controller/base.rb:136:in `process'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/rescuable.rb:25:in `block in process'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/rescuable.rb:24:in `process'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionview-6.0.3.2/lib/action_view/rendering.rb:39:in `process'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/base.rb:637:in `block in process'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/notifications.rb:180:in `block in instrument'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/notifications.rb:180:in `instrument'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/base.rb:636:in `process'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/message_delivery.rb:124:in `block in processed_mailer'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/message_delivery.rb:123:in `tap'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/message_delivery.rb:123:in `processed_mailer'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/message_delivery.rb:114:in `deliver_now'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/actionmailer-6.0.3.2/lib/action_mailer/mail_delivery_job.rb:23:in `perform'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/execution.rb:40:in `block in perform_now'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:112:in `block in run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/i18n-1.8.5/lib/i18n.rb:313:in `with_locale'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `instance_exec'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `instance_exec'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/logging.rb:25:in `block (4 levels) in <module:Logging>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/notifications.rb:180:in `block in instrument'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/notifications.rb:180:in `instrument'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/logging.rb:24:in `block (3 levels) in <module:Logging>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/logging.rb:45:in `block in tag_logger'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/tagged_logging.rb:80:in `block in tagged'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/tagged_logging.rb:28:in `tagged'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/tagged_logging.rb:80:in `tagged'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/logging.rb:45:in `tag_logger'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/logging.rb:21:in `block (2 levels) in <module:Logging>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `instance_exec'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:139:in `run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/execution.rb:39:in `perform_now'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/execution.rb:25:in `block in execute'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:112:in `block in run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/railtie.rb:43:in `block (4 levels) in <class:Railtie>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/execution_wrapper.rb:88:in `wrap'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/reloader.rb:72:in `block in wrap'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/execution_wrapper.rb:88:in `wrap'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/reloader.rb:71:in `wrap'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/railtie.rb:42:in `block (3 levels) in <class:Railtie>'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `instance_exec'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:139:in `run_callbacks'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/execution.rb:23:in `execute'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/activejob-6.0.3.2/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/concurrent-ruby-1.1.6/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:353:in `run_task'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/concurrent-ruby-1.1.6/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:342:in `block (3 levels) in create_worker'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/concurrent-ruby-1.1.6/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:325:in `loop'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/concurrent-ruby-1.1.6/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:325:in `block (2 levels) in create_worker'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/concurrent-ruby-1.1.6/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:324:in `catch'
+/home/tantai/.rvm/gems/ruby-2.7.0/gems/concurrent-ruby-1.1.6/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:324:in `block in create_worker'
+Started GET "/users" for ::1 at 2020-08-14 17:06:42 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 44)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.0ms | Allocations: 7480)
+
+
+Started GET "/photos" for ::1 at 2020-08-14 17:06:44 +0700
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 36.0ms | Allocations: 11128)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 65ms (Views: 51.9ms | ActiveRecord: 2.7ms | Allocations: 20374)
+
+
+Started POST "/users" for ::1 at 2020-08-14 17:08:40 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"rWajKZbONat4992izFLWxAkx7r6zTeB2iJVdjQ/D3Q4GPdR56v3X5Fiyu2jk7/lLXOIVzdlP9uk2WRp6RukX/w==", "user"=>{"fname"=>"NGuyễn", "lname"=>"Tài", "email"=>"tantai9991@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("fname", "lname", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["fname", "NGuyễn"], ["lname", "Tài"], ["email", "tantai9991@gmail.com"], ["password", "jkjk"], ["created_at", "2020-08-14 10:08:41.135185"], ["updated_at", "2020-08-14 10:08:41.135185"]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 0249b621-0e8e-444e-bca1-72f9e97d246f) to Async(mailers) with arguments: "UserMailer", "welcome_email", "deliver_now", {:args=>[#<GlobalID:0x00007f6b6c061998 @uri=#<URI::GID gid://fotobook/User/21>>]}
+  [1m[35m (75.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 110ms (ActiveRecord: 76.5ms | Allocations: 16011)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+Started GET "/users" for ::1 at 2020-08-14 17:08:41 +0700
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0249b621-0e8e-444e-bca1-72f9e97d246f] Performing ActionMailer::MailDeliveryJob (Job ID: 0249b621-0e8e-444e-bca1-72f9e97d246f) from Async(mailers) enqueued at 2020-08-14T10:08:41Z with arguments: "UserMailer", "welcome_email", "deliver_now", {:args=>[#<GlobalID:0x00007f6b683c9878 @uri=#<URI::GID gid://fotobook/User/21>>]}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0249b621-0e8e-444e-bca1-72f9e97d246f]   Rendering user_mailer/welcome_email.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0249b621-0e8e-444e-bca1-72f9e97d246f]   Rendered user_mailer/welcome_email.text.erb (Duration: 0.5ms | Allocations: 159)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0249b621-0e8e-444e-bca1-72f9e97d246f] UserMailer#welcome_email: processed outbound mail in 21.1ms
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 9308)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0249b621-0e8e-444e-bca1-72f9e97d246f] Delivered mail 5f3662a954242_6a4a5cbc18549@tantai-Aspire-VX5-591G.mail (3779.5ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0249b621-0e8e-444e-bca1-72f9e97d246f] Date: Fri, 14 Aug 2020 17:08:41 +0700
+From: gagage@gmail.com
+To: tantai9991@gmail.com
+Message-ID: <5f3662a954242_6a4a5cbc18549@tantai-Aspire-VX5-591G.mail>
+Subject: Welcome to My NUS!!! Coming now !!!
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Congrats T=C3=A0i NGuy=E1=BB=85n,=0D
+=0D
+Your email is tantai9991@gmail.com=0D
+You have successfully registered your account. Welcome to NUS fucking wor=
+ld!!!=0D
+=0D
+Follow my link: https://www.facebook.com/tan.tai.9406/=
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [0249b621-0e8e-444e-bca1-72f9e97d246f] Performed ActionMailer::MailDeliveryJob (Job ID: 0249b621-0e8e-444e-bca1-72f9e97d246f) from Async(mailers) in 3805.38ms
+Started GET "/photos" for ::1 at 2020-08-14 17:08:57 +0700
+Processing by PhotosController#index as HTML
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."created_at" ASC[0m
+  ↳ app/views/photos/index.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/photos/index.html.erb:42
+  Rendered photos/index.html.erb within layouts/application (Duration: 37.8ms | Allocations: 11069)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 48.5ms | ActiveRecord: 2.6ms | Allocations: 20299)
+
+

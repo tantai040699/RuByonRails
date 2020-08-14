@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  after_action :log_user_saved_to_db, only: :create
   
   def index
     
@@ -31,8 +30,6 @@ class UsersController < ApplicationController
   def params_user
     params.require(:user).permit :fname, :lname, :email, :password
   end
-  def log_user_saved_to_db
-    UserMailer.welcome_email(@user).deliver_later
-  end
+  
   
 end
