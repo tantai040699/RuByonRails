@@ -19,6 +19,3 @@
   3. Thiếu Photo / Album publication date.
   4. Check lại js show modal
   5. line 12, 13 chua xài đúng bootstrap
-
-###### app/views/albums/edit.html.erb
-  1. Đưa đoạn thông báo flash message vào layout
