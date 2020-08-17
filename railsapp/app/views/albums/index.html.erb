@@ -9,6 +9,15 @@
         </div>
       </div>
 
+
+      <div class= 'col-12 '><p>line1</p></div>
+
+      <div class="col-12 col-sm-8 mb-4">
+        <div class="col-12 pl-0">
+          <p>line 2</p>
+        </div>
+      </div>
+
       <div class="col-12 col-sm-8 p-0 mid-col mb-4">
         <div class="col-12 pl-0 pr-0">
           <div class="pt-4 pb-4">
@@ -27,12 +36,13 @@
 
   <div class="container op">
     <div class="row">
-    <% @albums.each do |album|%>
+    <% @albums.find_each do |album|%>
       <div class="col-12 col-sm-6 col-md-6">
         <div class="card mb-3 shadow" style="max-width: 540px;">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="https://i.pinimg.com/564x/e5/7c/4b/e57c4b70a4c3674069be6f4aa3cd967f.jpg" class="card-img cus" alt="..." data-toggle="modal" data-target="#mod">
+
+              <img src="https://i.pinimg.com/564x/e5/7c/4b/e57c4b70a4c3674069be6f4aa3cd967f.jpg" class="card-img cus" alt="..." >
             </div>
 
             <div class="col-md-6">
@@ -40,7 +50,8 @@
                 <div  class="user d-flex">
                   <div id="image">TT</div>  <span id="name_user"><%= album.user.fname%> <%=album.user.lname %></span></div>  
                   <h5 class="card-title " id="custitle"><%= album.title%></h5>
-                  <p class="card-text " id="cusdesc"><%= album.desc%></p>
+                  <p class="card-text cusdesc" maxlength="50"><%= album.desc%></p>
+                  <p> <%= link_to "Go to galery",  album %></p>
                   <p class="card-text"><small class="text-muted"><%= album.created_at%></small></p>
                 </div>
               </div>
@@ -49,20 +60,4 @@
         </div>
         <% end%>
       </div>
-  </div>
-  
-
-
-  <div class="modal fade " id="mod" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class=modal-header>
-          <h4 id="modal-title"></h4>
-        </div>
-         <div class="modal-body">
-          <img id="modal-img" src="" alt="...">
-          <p id="modal-desc"></p>
-        </div>
-      </div>
-    </div>
   </div>

@@ -1,16 +1,15 @@
 class AlbumsController < ApplicationController
     def index
-      @albums = Album.order(:created_at)
+      @albums = Album.where("status = ?",'public').order(:created_at)
     end
 
-
-
-
-
+    def show
+      @album = Album.find(params[:id])
+      @photo = @album.photos
+    end
 
     def edit
       @album = Album.find(params[:id])
-
     end
     
     def update
@@ -22,10 +21,7 @@ class AlbumsController < ApplicationController
         render 'edit'  
       end
       
-
-      
     end
-    
   
     private
       def params_update

@@ -11,8 +11,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new params_user
     if @user.save
-      
       flash[:success] = "Register success"
+      SendmailuserJob.perform_later @user
       redirect_to users_path
     else
       flash[:success] = "Register failed"

@@ -21,9 +21,9 @@ class User < ApplicationRecord
 
 
     #callback
-    after_create :log_user_saved_to_db
-private
-    def log_user_saved_to_db
-        UserMailer.welcome_email(self).deliver_later
-    end
+    #  after_create :log_user_saved_to_db
+    # private
+    #     def log_user_saved_to_db
+    #         UserMailer.welcome_email(self).deliver_later
+    #     end
 end

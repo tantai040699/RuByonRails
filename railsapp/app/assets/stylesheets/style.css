@@ -30,7 +30,7 @@ body {
 }
 
 .custom_input {
-    width: 400px;
+    width: 600px;
 }
 
 @media (min-width: 1200px) {
@@ -141,6 +141,12 @@ a {
  }
  .custitle {
      margin-top: 10px;
+ }
+ .cusdesc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
  }
  .edit-albums-form {
     display: flex;

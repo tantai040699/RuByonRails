@@ -10,17 +10,13 @@
         </div>
       </div>
 
-      <div class="col-12 col-sm-8 p-0 mid-col mb-4">
-        <div class="col-12 pl-0 pr-0">
-          <div class="pt-4 pb-4">
+      <div class="col-12 col-sm-8 mb-4 mt-4">
             <div class="row photos_to_albums">
               <div class="btn-group btn-group-lg but" role="group" aria-label="Basic example">
                 <button type="button" class="btn pagebut " style="background:#3c5a96; color:#FFF">Photos</button>
                 <button type="button" class="btn pagebut" style="border: 2px solid #3c5a96"><%= link_to "Albums", albums_path, {style: 'font-size: 20px;  color: #3c5a96 ; text-decoration: none' } %></button>
               </div>
-            </div>
-          </div>
-        </div>	
+            </div>	
       </div>
 
     </div>
@@ -28,7 +24,7 @@
 
   <div class="container op">
     <div class="row">
-    <% @photo.each do |photo|%>
+    <% @photo.find_each do |photo|%>
       <div class="col-12 col-sm-6 col-md-6">
         <div class="card mb-3 shadow" style="max-width: 540px;">
           <div class="row no-gutters">
