@@ -13,27 +13,36 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-sm navbar-dark navbar_bg">
+    <nav class="navbar navbar-expand-sm navbar_bg">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-2">
-            <%= link_to  "Fotobook", photos_path, :class => "navbar-brand" %>
+          <div class="col-sm-3">
+            <%= link_to  "Fotobook", photos_path, :class => "navbar-brand color-nav logo" %>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fas fa-search"></i>
+              <i class="fas fa-search search-icon"></i>
             </button>
           </div>
-          <div class="col-sm-7">
+          <div class="col-sm-9">
             <div class="collapse navbar-collapse">
               <form class="form  my-0 custom_input">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search Photo/Album" aria-label="Search">
               </form>
             </div>
           </div>
-          <div class="col-sm-2">
-
-          </div>
         </div>
-        <a class="navbar-brand navbar-brand_login" href="login.html">Login</a>
+            <div class="navbar-brand customer">
+              <% if user_signed_in? %>
+                <div class="customer-icon navbar-brand rounded-circle">
+                  <%= current_user.fname.slice(0)  %> <%= current_user.lname.slice(0) %>
+                </div>
+                <div class=" customer-name">
+                  <%= current_user.fname  %> <%= current_user.lname %>
+            </div>
+              </div>
+                <%= link_to "Log out", destroy_user_session_path, :method=>'delete', class: 'navbar-brand navbar-brand_login color-nav'%>
+              <% else %>
+                <%= link_to "Log in", new_user_session_path,  class: 'navbar-brand navbar-brand_login color-nav' %>
+              <% end %> 
       </div>
     </nav>
 
@@ -45,11 +54,12 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
       <% flash.each do |type, msg| %>
         <div><%= msg %></div>
       <% end %>
     </div>
+  
 
     <%= yield %>  
   </body>

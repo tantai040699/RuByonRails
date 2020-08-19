@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
   
-  get 'logins/index'
-  root 'users#new'
+  devise_for :users
+  # devise_scope :user do
+  #  get:'devise/sessions#new'
+  # end
+  root 'photos#index'
 
   # get 'user_login/index'
   # get  'user_sign_up/index'
@@ -11,7 +14,7 @@ Rails.application.routes.draw do
   # # #User Login Controller :
   # resources :user_login, only: :index
   # # Photo, ALbums Controller :
-  resources :photos , :albums, :users
+  resources :photos , :albums
 
 
   # #feed,discovery Controller : homepage

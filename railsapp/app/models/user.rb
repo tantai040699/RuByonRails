@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  #  :lockable, :timeoutable, :trackable and :omniauthable
+    devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+         
     has_many :photos,dependent: :destroy
     has_many :albums,dependent: :destroy
 
@@ -9,7 +14,7 @@ class User < ApplicationRecord
 
     has_many :passive_follows, class_name: Follow.name, foreign_key: :followed_id
     has_many :follower , through: :passive_follows
-
+  
 
 
     #validate

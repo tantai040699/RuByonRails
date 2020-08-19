@@ -11,15 +11,6 @@ body {
     background-color: #3c5a96;
 }
 
-.form-control {
-    height: 2em;
-}
-
-.navbar-brand {
-    font-weight: 500;
-    font-size: 1.1rem;
-}
-
 .custom_input {
     width: 600px;
 }
@@ -37,10 +28,6 @@ body {
     padding-top: 3px;
     padding-left: 5px;
  }
- .user #name_user {
-    padding-left: 10px;
-    padding-top: 5px;
- }
  .menu ul li {
      font-size: 22px;
      font-weight: 600;
@@ -50,6 +37,32 @@ body {
  .menu{
      margin-top: 20px;
      color: #3c5a96;
+ }
+ .customer {
+    display: flex;
+    justify-content: flex-end;
+ }
+ .customer-icon {
+       background: #FFF;
+       padding: 3px;
+       color: #3c5a96;
+       font-weight: 600;
+ }
+ .customer-name{
+     display: inline;
+     color: #FFF;
+ }
+ .color-nav{
+    color: #FFF;
+    list-style: none;
+ }
+ .search-icon {
+     color:#FFF;
+ }
+ .logo {
+     margin-left: 20px;
+     font-size: 40px;
+     font-weight: 800;
  }
 /* modal */
  body.modal-open .op{
@@ -79,18 +92,20 @@ body {
     .custom_input {
         width: 200px;
     }
+    .logo {
+        margin-left:0;
+    }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
     .response_Search {
         display: none;
     }
     .reponse_input {
         width: 100%;
     }
-    .col-sm-8 {
-        padding-left: 0;
-        padding-right: 0;
+    .customer-name {
+        display: none;
     }
 }
 
