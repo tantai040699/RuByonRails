@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_013619) do
     t.integer "collection"
     t.text "title"
     t.text "desc"
-    t.boolean "status"
+    t.boolean "status", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_albums_on_user_id"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_013619) do
     t.string "image"
     t.text "title"
     t.text "desc"
-    t.boolean "status"
+    t.boolean "status", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_photos_on_user_id"

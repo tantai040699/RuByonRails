@@ -68,6 +68,10 @@ body {
  body.modal-open .op{
     filter: blur(5px);
  }
+ .cus {
+    height: auto;
+
+ }
  .custitle {
      margin-top: 10px;
  }

@@ -5,7 +5,7 @@ class CreatePhotos < ActiveRecord::Migration[6.0]
       t.string  :image
       t.text :title
       t.text :desc
-      t.boolean :status 
+      t.boolean :status , default: true
       t.timestamps
     end
   end

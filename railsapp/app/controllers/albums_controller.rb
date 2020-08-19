@@ -19,7 +19,6 @@ class AlbumsController < ApplicationController
       else
         render 'edit'  
       end
-      
     end
     def destroy
     
@@ -27,7 +26,7 @@ class AlbumsController < ApplicationController
   
     private
       def find_id_album
-        @photo = Album.find(params[:id])
+        @album = Album.find(params[:id])
       end
 
       def params_update
