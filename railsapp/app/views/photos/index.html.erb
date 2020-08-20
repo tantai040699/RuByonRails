@@ -1,55 +1,51 @@
-
-  <div class="container-fluid op">
-    <div class="row pt-1">
-      <div class="col-12 col-sm-2 p-0">
-        <div class="menu left-col d-flex">
-          <ul class="list pt-4">
-            <li>Feed</li>
-            <li><%= link_to "Discover",  photos_path, {style: 'font-size: 20px;  color: black; text-decoration: none' } %></li>
-          </ul>
+<div class="container-fluid cus-body-color">
+  <div class="row">
+    <div class="col-12 col-sm-2">
+      <ul class="list mt-4 submenu">
+        <li><%= link_to "Feed",  photos_path, class: 'feed-submenu' %></li>
+        <li><%= link_to "Discover",  photos_path, class: 'discover-submenu' %></li>
+      </ul>
+    </div>
+    <div class="col-12 col-sm-8 pt-4 cus-card-color">
+      <div class="photos_to_albums">
+        <div class="btn-group btn-group-lg but" role="group" aria-label="Basic example">
+          <button type="button" class="btn pagebut " style="background:#3c5a96; color:#FFF">Photos</button>
+          <button type="button" class="btn pagebut" style="border: 2px solid #3c5a96"><%= link_to "Albums", albums_path, {style: 'font-size: 20px;  color: #3c5a96 ; text-decoration: none' } %></button>
         </div>
       </div>
 
-      <div class="col-12 col-sm-8 mb-4 mt-4">
-            <div class="row photos_to_albums">
-              <div class="btn-group btn-group-lg but" role="group" aria-label="Basic example">
-                <button type="button" class="btn pagebut " style="background:#3c5a96; color:#FFF">Photos</button>
-                <button type="button" class="btn pagebut" style="border: 2px solid #3c5a96"><%= link_to "Albums", albums_path, {style: 'font-size: 20px;  color: #3c5a96 ; text-decoration: none' } %></button>
-              </div>
-            </div>	
-      </div>
-
-    </div>
-  </div>
-
-  <div class="container op">
-    <div class="row">
-    <% @photo.find_each do |photo|%>
-      <div class="col-12 col-sm-6 col-md-6">
-        <div class="card mb-3 shadow" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-7">
-              <img src=<%= photo.image_url(:thumb)%> class="card-img cus" alt="..." data-toggle="modal" data-target="#mod">
-            </div>
-
-            <div class="col-md-5">
-              <div class="card-body cus-body">
-                <div  class="user d-flex">
-                  <div id="image">TT</div>  <span class="name_user"><%= photo.user.fname%> <%=photo.user.lname %></span></div>  
-                  <h5 class="card-title custitle" ><%= photo.title%></h5>
-                  <p class="card-text cusdesc " ><%= photo.desc%></p>
+      <div class="container cus-main op">
+        <div class="row mt-4">
+            <% @photo.find_each do |photo|%>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+            <div class="card mb-3 shadow" style="max-width: 540px;">
+              <div class="row no-gutters">
+                <div class="col-md-7">
+                  <img src=<%= photo.image_url(:thumb)%> class="card-img cus" alt="..." data-toggle="modal" data-target="#mod">
                 </div>
-                <i class="far fa-heart fa-1x">&nbsp;123</i>
-                <span class="card-text"><small class="cusdate"><%= photo.created_at%></small></span>
+
+                <div class="col-md-5">
+                  <div class="card-body cus-body">
+                    <div  class="user d-flex">
+                      <div id="image">TT</div>  <span class="name_user"><%= photo.user.fname%> <%=photo.user.lname %></span></div>  
+                      <h5 class="card-title custitle" ><%= photo.title%></h5>
+                      <p class="card-text cusdesc " ><%= photo.desc%></p>
+                    </div>
+                    <div>
+                    <i class="far fa-heart fa-1x">&nbsp;123</i>
+                    <span class="card-text"><small class="cusdate"><%= photo.created_at%></small></span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+            <% end%>
           </div>
         </div>
-        <% end%>
       </div>
+    </div>
   </div>
-  
-
+</div>              
 
   <div class="modal fade " id="mod" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

@@ -30,19 +30,19 @@
             </div>
           </div>
         </div>
-            <div class="navbar-brand customer">
-              <% if user_signed_in? %>
-                <div class="customer-icon navbar-brand rounded-circle">
-                  <%= current_user.fname.slice(0)+current_user.lname.slice(0)%>
-                </div>
-                <div class=" customer-name">
-                  <%= current_user.fname  %> <%= current_user.lname %>
+        <div class="navbar-brand customer">
+          <% if user_signed_in? %>
+            <div class="customer-icon navbar-brand rounded-circle">
+              <%= current_user.fname.slice(0)+current_user.lname.slice(0)%>
             </div>
-              </div>
-                <%= link_to "Log out", destroy_user_session_path, :method=>'delete', class: 'navbar-brand navbar-brand_login color-nav'%>
-              <% else %>
-                <%= link_to "Log in", new_user_session_path,  class: 'navbar-brand navbar-brand_login color-nav' %>
-              <% end %> 
+            <div class=" customer-name">
+              <%= current_user.fname  %> <%= current_user.lname %>
+            </div>
+        </div>
+            <%= link_to "Log out", destroy_user_session_path, :method=>'delete', class: 'navbar-brand navbar-brand_login color-nav'%>
+          <% else %>
+            <%= link_to "Log in", new_user_session_path,  class: 'navbar-brand navbar-brand_login color-nav' %>
+          <% end %> 
       </div>
     </nav>
 
@@ -60,7 +60,7 @@
       <% end %>
     </div>
   
-
-    <%= yield %>  
+    
+   <%= yield %>  
   </body>
 </html>

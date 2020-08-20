@@ -3,8 +3,12 @@ body {
     /* line-height: 1; */
     font-family: 'Roboto', sans-serif;
     background-position: center;
-    background: #FFFFFF;
     font-size: 18px;
+    background-color: #F8F8F8 !important;
+    min-height: 900px;
+}
+.cus-card-color {
+    background: #FFF;
 }
 
 .navbar_bg {
@@ -57,19 +61,47 @@ body {
     color: #FFF;
     list-style: none;
  }
+ .color-nav:hover{
+    color: #FFF;
+    list-style: none;
+ }
  .search-icon {
      color:#FFF;
  }
  .logo {
-     margin-left: 20px;
-     font-size: 40px;
-     font-weight: 800;
+     text-align: center;
+ }
+ .logo a {
+    font-weight: 900;
+}
+ .logo a:hover {
+    color: #FFF;
  }
 /* modal */
  body.modal-open .op{
     filter: blur(5px);
  }
- 
+ .submenu {
+    list-style: none;
+    font-size: 22px;
+    font-weight: 600;
+ }
+ .submenu a {
+    text-decoration: none;
+ }
+ .submenu a:hover {
+    text-decoration: none;
+    color:#3c5a96;
+ }
+ .feed-submenu {
+     color:#3c5a96; 
+ }
+ .discover-submenu {
+     color: black;
+ }
+ .cus-main{
+     background-color: #FFF;
+ }
  .cus {
     height: auto;
  }
@@ -89,9 +121,7 @@ body {
     overflow: hidden;
  }
  .cusdate{
-     display: inline;
-     float: right;
-     margin-top: 4px;
+    float:right;
  }
  .fa-heart {
     margin-left: 10px;
