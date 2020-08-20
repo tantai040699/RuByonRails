@@ -78,10 +78,11 @@ $(document).ready(function() {
 
     $('.cus').click(function() {
         var img = $(this).attr('src');
-        var title = $(this).text();
-        var desc = $('.cusdesc').text();
+        var parent = $(this).closest(".photo-container");
+        var title = parent.find(".custitle").text();
+        var desc = parent.find(".cusdesc").text();
 
-        $('#modal-title').text(title);
+        $('#modal-title-id').text(title);
         $('#modal-img').attr('src',img);
         $('#modal-desc').text(desc);
     });

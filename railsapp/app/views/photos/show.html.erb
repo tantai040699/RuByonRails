@@ -1,0 +1,18 @@
+<div class="container-fluid cus-body-color">
+    <div class="row">
+        <div class="col-12 col-sm-2 sticky-top ">
+        <ul class="list mt-4 submenu  sticky-top">
+            <li><%= link_to "Feed",  photos_path, class: 'feed-submenu' %></li>
+            <li><%= link_to "Discover",  photos_path, class: 'discover-submenu' %></li>
+        </ul>
+        </div>
+        <div class="col-12 col-sm-8 pt-4 cus-card-color">
+            <div class="photos_to_albums">
+                <div class="btn-group btn-group-lg but" role="group" aria-label="Basic example">
+                    <button type="button" class="btn pagebut " style="background:#3c5a96; color:#FFF">Photos</button>
+                    <button type="button" class="btn pagebut" style="border: 2px solid #3c5a96"><%= link_to "Albums", albums_path, {style: 'font-size: 20px;  color: #3c5a96 ; text-decoration: none' } %></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

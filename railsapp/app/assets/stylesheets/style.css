@@ -23,7 +23,7 @@ body {
 	justify-content: center;
 	align-items: center;
  }  
- .user #image {
+ .user .image {
     border-radius: 50%;
     height: 30px;
     width: 30px;
@@ -31,6 +31,7 @@ body {
     color: #FFF;
     padding-top: 3px;
     padding-left: 5px;
+
  }
  .menu ul li {
      font-size: 22px;
@@ -81,6 +82,7 @@ body {
  body.modal-open .op{
     filter: blur(5px);
  }
+ 
  .submenu {
     list-style: none;
     font-size: 22px;
@@ -131,9 +133,10 @@ body {
 	justify-content: center;
 	align-items: center;
  }
- @media (min-width: 1200px) {
-    .container {
-        max-width: 1200px;
+
+@media (min-width: 800px) and (max-width: 1200px) {
+    .custom_input {
+        width: 300px;
     }
 }
 
@@ -144,12 +147,12 @@ body {
     .logo {
         margin-left:0;
     }
+    .customer-name {
+        display: none;
+    }
 }
 
 @media (max-width: 576px) {
-    .response_Search {
-        display: none;
-    }
     .reponse_input {
         width: 100%;
     }

@@ -6,6 +6,9 @@ class PhotosController < ApplicationController
     @photo = Photo.where("status = ?",'1').order(:created_at).includes(:user).page params[:page]
   end
   
+  def show
+  
+  end
   def new
     @photo = Photo.new
   end
