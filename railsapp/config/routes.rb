@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #  get:'devise/sessions#new'
   # end
   root 'photos#index'
+  get 'new', to: 'photos#new'
 
   # get 'user_login/index'
   # get  'user_sign_up/index'

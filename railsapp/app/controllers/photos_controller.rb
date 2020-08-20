@@ -34,7 +34,7 @@ class PhotosController < ApplicationController
   end
   
   def destroy
-  
+    
   end
   private
   def params_photo

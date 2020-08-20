@@ -33,7 +33,7 @@
             <div class="navbar-brand customer">
               <% if user_signed_in? %>
                 <div class="customer-icon navbar-brand rounded-circle">
-                  <%= current_user.fname.slice(0)  %> <%= current_user.lname.slice(0) %>
+                  <%= current_user.fname.slice(0)+current_user.lname.slice(0)%>
                 </div>
                 <div class=" customer-name">
                   <%= current_user.fname  %> <%= current_user.lname %>

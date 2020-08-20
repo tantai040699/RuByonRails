@@ -9,7 +9,7 @@ class Photo < ApplicationRecord
     # validates :title, :desc, :status, :image, presence: true
     # validates :title, length: {maximum:140}
     # validates :desc, length: {maximum:300}
-    # validates :status, acceptance: {accept: ['private','public']}
+    # validates :status, acceptance: {accept: ['1','0']}
     # validates :image, format: {with: /\.(png|jpeq|gif)\Z/i}
     # validate :image_size_validation
 
