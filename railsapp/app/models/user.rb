@@ -15,7 +15,7 @@ class User < ApplicationRecord
     has_many :passive_follows, class_name: Follow.name, foreign_key: :followed_id
     has_many :follower , through: :passive_follows
   
-
+    mount_uploader :avatar, ImageUploader
 
     #validate
     # validates :fname, :lname, :email, :password , presence: true

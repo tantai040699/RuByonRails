@@ -1,63 +1,75 @@
-  <div class="container-fluid op ">
-    <div class="row pt-1 out-card">
-      <div class="col-12 col-sm-2 p-0">
-        <div class="menu left-col d-flex">
-          <ul class="list pt-4">
-            <li>Feed</li>
-            <li><%= link_to "Discover",  photos_path, {style: 'font-size: 20px;  color: black; text-decoration: none' } %></li>
-          </ul>
+<div class="container-fluid cus-body-color">
+  <div class="row">
+    <div class="col-12 col-sm-2 sticky-top ">
+      <ul class="list mt-4 submenu  sticky-top">
+        <li><%= link_to "Feed",  photos_path, class: 'feed-submenu' %></li>
+        <li><%= link_to "Discover",  photos_path, class: 'discover-submenu' %></li>
+      </ul>
+    </div>
+    <div class="col-12 col-sm-8 pt-4 cus-card-color">
+      <div class="photos_to_albums">
+        <div class="btn-group btn-group-lg but" role="group" aria-label="Basic example">
+          <button type="button" class="btn pagebut " style="background:#3c5a96; color:#FFF">Photos</button>
+          <button type="button" class="btn pagebut" style="border: 2px solid #3c5a96"><%= link_to "Albums", albums_path, {style: 'font-size: 20px;  color: #3c5a96 ; text-decoration: none' } %></button>
         </div>
       </div>
 
+      <div class="container cus-main op">
+        <div class="row mt-4">
+          <% @albums.find_each do |album|%>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 photo-container">
+            <div class="card mb-3 shadow" style="max-width: 540px;">
+              <div class="row no-gutters">
+                <div class="col-md-12 col-lg-7">
+                  <img src=<%=album.photos.take.image_url(:thumb) %> class="card-img cus" alt="..." data-toggle="modal" data-target="#mod">
+                </div>
 
-      <div class= 'col-12 '><p>line1</p></div>
+                <div class="col-md-12 col-lg-5">
+                  <div class="card-body cus-body">
+                    <div  class="user d-flex">
+                        <div class="image"> 
+                          <%=album.user.fname.slice(0)+album.user.lname.slice(0)%>
+                        </div>
+                      <span class=" "><%= album.user.fname%> <%=album.user.lname %></span>
+                    </div>  
+                    <h5 class="card-title custitle" ><%= album.title%></h5>
+                    <p class="card-text cusdesc " ><%= album.desc%></p>
+                  </div>
+                  <div>
+                    <i class="far fa-heart fa-1x">&nbsp;123</i>
+                    <i class="card-text"><small class="cusdate pt-1"><%= album.created_at%></small></i>
+                  </div>
+                </div>
 
-      <div class="col-12 col-sm-8 mb-4">
-        <div class="col-12 pl-0">
-          <p>line 2</p>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-8 p-0 mid-col mb-4">
-        <div class="col-12 pl-0 pr-0">
-          <div class="pt-4 pb-4">
-            <div class="row photos_to_albums">
-              <div class="btn-group btn-group-lg but" role="group" aria-label="Basic example">
-                <button type="button" class="btn pagebut " style="border: 2px solid #3c5a96"><%= link_to "Photos", photos_path, {style: 'font-size: 20px;  color: #3c5a96 ; text-decoration: none' } %></button>
-                <button type="button" class="btn pagebut"style="background:#3c5a96; color:#FFF ">Albums</button>
               </div>
             </div>
           </div>
-        </div>	
+            <% end%>
+        </div>
       </div>
-
     </div>
   </div>
+</div>
+             
 
-  <div class="container op">
-    <div class="row">
-    <% @albums.find_each do |album|%>
-      <div class="col-12 col-sm-6 col-md-6">
-        <div class="card mb-3 shadow" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-6">
 
-              <img src="https://i.pinimg.com/564x/e5/7c/4b/e57c4b70a4c3674069be6f4aa3cd967f.jpg" class="card-img cus" alt="..." >
-            </div>
-
-            <div class="col-md-6">
-              <div class="card-body">
-                <div  class="user d-flex">
-                  <div id="image">TT</div>  <span id="name_user"><%= album.user.fname%> <%=album.user.lname %></span></div>  
-                  <h5 class="card-title " id="custitle"><%= album.title%></h5>
-                  <p class="card-text cusdesc" maxlength="50"><%= album.desc%></p>
-                  <p> <%= link_to "Go to galery",  album %></p>
-                  <p class="card-text"><small class="text-muted"><%= album.created_at%></small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <% end%>
+<!-- Modal -->
+<div class="modal fade" id="mod" tabindex="-1" role="dialog" aria-labelledby="modal-title-id" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title-id">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <div class="modal-body">
+        <img id="modal-img" src="" alt="..." style="width:100%;height:auto">
+      </div>
+      <div class="modal-footer">
+       <p id="modal-desc"></p>
+      </div>
+    </div>
   </div>
+</div>
+<div class="photos_to_albums"> <%= paginate @albums, theme: 'twitter-bootstrap-4' %></div>

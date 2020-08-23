@@ -1,8 +1,27 @@
 class AlbumsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_id_album, only: [:show,:edit, :update, :destory]
+
     def index
-      @albums = Album.where("status = ?",'public').order(:created_at)
+      @albums = Album.where("status = ?",'1').order(:created_at).includes(:user,:photos).page params[:page]
+    end
+
+    def new
+      @album =Album.new
+    end
+
+    def create
+      @album = current_user.albums.create params_album
+      @photo = current_user.photos.create params_photo
+      @rela= @album.albums_photos.new(photo: @photo)
+      if @rela.save
+        @album.update_attribute(:collection,1)
+        flash[:success] = "Upload album success"
+        redirect_to albums_path
+      else
+        flash[:success] = "Upload failed"
+        render :new
+      end
     end
 
     def show
@@ -10,6 +29,7 @@ class AlbumsController < ApplicationController
     end
 
     def edit
+      
     end
     
     def update
@@ -29,9 +49,11 @@ class AlbumsController < ApplicationController
         @album = Album.find(params[:id])
       end
 
-      def params_update
-        params.require(:album ).permit(:title)
+      def params_album
+        params.require(:album ).permit(:title,:desc,:collection,:status)
       end
-      
+      def params_photo
+        params.require(:album ).permit(:title, :desc,:status,:image)
+      end
 
 end

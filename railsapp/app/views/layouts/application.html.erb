@@ -32,14 +32,16 @@
         </div>
         <div class="navbar-brand customer">
         <% if user_signed_in? %>
-            <div class="customer-icon navbar-brand rounded-circle">
-              <%= current_user.fname.slice(0)+current_user.lname.slice(0)%>
-            </div>
+          <%= link_to profiles_index_path do  %>
+            <%= image_tag  current_user.avatar_url(:icon) ,class: 'rounded-circle' %>
             <div class=" customer-name">
               <%= current_user.fname  %> <%= current_user.lname %>
             </div>
+            <% end %> 
         </div>
-          <%= link_to "Log out", destroy_user_session_path, :method=>'delete', class: 'navbar-brand navbar-brand_login color-nav'%>
+           <%= link_to destroy_user_session_path, :method=>'delete', class: 'navbar-brand navbar-brand_login color-nav' do%>
+            <i class="fa fa-power-off" aria-hidden="true"></i>
+             <% end %>
         <% else %>
           <%= link_to "Log in", new_user_session_path,  class: 'navbar-brand navbar-brand_login color-nav' %>
         <% end %> 

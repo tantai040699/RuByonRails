@@ -16,20 +16,20 @@
 
       <div class="container cus-main op">
         <div class="row mt-4">
-          <% @photo.find_each do |photo|%>
+          <% @photo.each do |photo|%>
           <div class="col-12 col-sm-12 col-md-12 col-lg-6 photo-container">
             <div class="card mb-3 shadow" style="max-width: 540px;">
               <div class="row no-gutters">
-                <div class="col-md-7">
+                <div class="col-md-12 col-lg-7">
                   <img src=<%= photo.image_url(:thumb)%> class="card-img cus" alt="..." data-toggle="modal" data-target="#mod">
                 </div>
 
-                <div class="col-md-5">
+                <div class="col-md-12 col-lg-5">
                   <div class="card-body cus-body">
                     <div  class="user d-flex">
-                      <div class="image"> 
-                        <%=photo.user.fname.slice(0)+photo.user.lname.slice(0)%>
-                      </div>  
+                        <div class="image"> 
+                          <%=photo.user.fname.slice(0)+photo.user.lname.slice(0)%>
+                        </div>
                       <span class=" "><%= photo.user.fname%> <%=photo.user.lname %></span>
                     </div>  
                     <h5 class="card-title custitle" ><%= photo.title%></h5>

@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   # resources :user_login, only: :index
   # # Photo, ALbums Controller :
   resources :photos , :albums
+  get 'profiles/index', to: 'profiles#index'
 
+  get 'follows/follower', to: 'follows#show_follower'
+  get 'follows/following', to: 'follows#show_following'
 
   # #feed,discovery Controller : homepage
   # get 'feed', to 'homepage#index'

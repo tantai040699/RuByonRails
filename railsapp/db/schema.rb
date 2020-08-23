@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_013619) do
+ActiveRecord::Schema.define(version: 2020_08_21_080031) do
 
   create_table "albums", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "collection"
+    t.integer "collection", default: 0
     t.text "title"
     t.text "desc"
     t.boolean "status", default: true
@@ -67,6 +67,11 @@ ActiveRecord::Schema.define(version: 2020_08_19_013619) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "photos_count", default: 0, null: false
+    t.integer "albums_count", default: 0, null: false
+    t.integer "follower_count", default: 0, null: false
+    t.integer "following_count", default: 0, null: false
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

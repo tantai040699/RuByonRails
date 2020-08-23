@@ -37,11 +37,12 @@ class PhotosController < ApplicationController
   end
   
   def destroy
-    
+    @photo.destroy
+    redirect_to profiles_index_path
   end
   private
   def params_photo
-    params.require(:photo ).permit(:title, :desc,:image,:status)
+    params.require(:photo ).permit(:title, :desc,:status,:image)
   end
 
   def find_id_photo
