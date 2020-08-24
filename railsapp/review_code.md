@@ -42,31 +42,31 @@
   2. Gặp lỗi nếu user chưa đăng nhập
 
 
-######app/views/albums/show.html.erb
+###### app/views/albums/show.html.erb
   1. line 1  dổi thành biến số nhiều
   2. line 12, 13 sai thứ tự đóng mở div vs đóng mở hàm
 
-######app/views/albums/new.html.erb
+###### app/views/albums/new.html.erb
   1. Chưa xài I18n
 
-######app/views/albums/index.html.erb
+###### app/views/albums/index.html.erb
   1. Thiếu Album publication date.
   2. Hạn chế dùng style css inline
 
-######app/views/follows/show_follower.html.erb
+###### app/views/follows/show_follower.html.erb
   1. coi lại cách đặt tên biến.. biến list nên dùng số nhiều
 
-######app/views/follows/show_following.html.erb
+###### app/views/follows/show_following.html.erb
   1. coi lại cách đặt tên biến.. biến list nên dùng số nhiều
 
-######app/views/photos/index.html.erb
+###### app/views/photos/index.html.erb
   1. Thiếu Photo publication date.
   2. Hạn chế dùng style css inline
   3. biến list nên là số nhìu
 
-######app/views/photos/show.html.erb
+###### app/views/photos/show.html.erb
   1. Hạn chế dùng style css inline
   2. Chưa thấy load info gì trong view
 
-######app/views/profiles/index.html.erb
+###### app/views/profiles/index.html.erb
   1. biến list nên là số nhìu
