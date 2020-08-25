@@ -25,12 +25,12 @@ class PhotosController < ApplicationController
     end
   end
   def edit
-    
+     
   end
   def update
     if @photo.update(params_photo)
       flash[:success] = 'The photo has just updated'
-      redirect_to photos_path
+      redirect_to profiles_show_path(current_user)
     else
       render 'edit'  
     end

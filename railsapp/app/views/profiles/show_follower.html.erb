@@ -22,7 +22,11 @@
                   <% if @user == current_user%>
                     <div class="custom-btn">Edit profile</div>
                     <%else%>
-                    <div class="custom-btn">Follow</div>
+                       <% if @user.following.include? current_user%>
+                           <div class="custom-btn"> <%= link_to  "Unfollow", profile_following_delelte_path, method: :delete %></div>
+                      <%else%>
+                           <div class="custom-btn"> <%= link_to  "Follow", profile_following_connect_path,  method: :post%></div>
+                      <%end%>
                     <%end%>
                   </div>
                 </div>
@@ -51,20 +55,29 @@
                 <div class="avatar mb-1">
                     <img src="https://picsum.photos/300" alt="">
                 </div>
-                <div class="name mb-2">Hai Nguyen</div>
+                <div class="name mb-2"><%= follow.lname %><%= follow.fname%></div>
                 <div class="number d-flex justify-content-between">
                     <div class="photo">
-                        <span class="number">22</span>
+                        <span class="number"><%= follow.photos_count %></span>
                         <span class="type">photo</span>
                     </div>
 
                     <div class="album mb-2">
-                        <span class="number">105</span>
+                        <span class="number"><%= follow.albums_count %></span>
                         <span class="type">album</span>
                     </div>
                 </div>
                 <div class="flw">
-                    <button class="custom-btn-following" type="button">following</button>
+
+                 <% if follow == current_user%>
+                      <div class="custom-btn-following invisible"> <%= link_to  "Unfollow", profile_following_delelte_path(follow.id), method: :delete %></div>
+                <%else%>
+                    <% if follow.following.include? current_user%>
+                      <div class="custom-btn-following"> <%= link_to  "Unfollow", profile_following_delelte_path(follow.id), method: :delete %></div>
+                      <%else%>
+                      <div class="custom-btn-following"> <%= link_to  "Follow", profile_following_connect_path(follow.id),  method: :post%></div>
+                      <%end%>
+                <%end%>
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+    before_action :authenticate_user!
     # def index 
     #     @photo = current_user.photos.order(:created_at).includes(:user).page params[:page]
     # end
@@ -20,13 +21,13 @@ class ProfilesController < ApplicationController
     end
     def follow_connect
         User.find(params[:id]).following << current_user
-        redirect_to profiles_show_path
+        redirect_to profiles_following_path(current_user)
     end
     def follow_destroy
         user=User.find(params[:id])
         user.following.delete current_user
         current_user.follower.delete user
-        redirect_to profiles_show_path
+        redirect_to profiles_following_path(current_user)
     end
     
     

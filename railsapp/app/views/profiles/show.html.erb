@@ -60,7 +60,15 @@
       <div class="row">
       <% @user.photos.each do |photo|%>
        <div class="col-12 col-md-3">
+       <i class=" edit-lock"><%= link_to  "Edit", edit_photo_path(photo), class: "edit-lock-1" %></i>
+       
          <img alt="picture" src= <%= photo.image_url(:thumb)%> class="img-fluid">
+
+        <% if photo.status?%>
+          <i class="fas fa-unlock-alt lock"></i>
+        <% else%>
+         <i class="fas fa-lock lock"></i> 
+        <%end%>
           <h4> <%= photo.title%></h4>
       </div>
       <%end%>

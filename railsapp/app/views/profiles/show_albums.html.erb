@@ -19,7 +19,15 @@
               <div class="col-lg-9 col-9 p-0">
                 <div class="col-lg-12 col-12">
                   <div class="following">
+                    <% if @user == current_user%>
                     <div class="custom-btn">Edit profile</div>
+                    <%else%>
+                       <% if @user.following.include? current_user%>
+                           <div class="custom-btn"> <%= link_to  "Unfollow", profile_following_delelte_path, method: :delete %></div>
+                      <%else%>
+                           <div class="custom-btn"> <%= link_to  "Follow", profile_following_connect_path,  method: :post%></div>
+                      <%end%>
+                    <%end%>
                   </div>
                 </div>
               <div class="col-lg-12 col-12 mt-4">
@@ -49,13 +57,32 @@
     </div>
     <%end%>
     <div class="col-lg-12 col-md-12 col-12 mt-4">
+
       <div class="row">
       <% @albums.each do |album|%>
-       <div class="col-12 col-md-3">
-         <img alt="picture" src= <%= album.photos.take.image_url(:thumb)%> class="img-fluid">
+       <div class="col-12 col-md-3 mt-3">
+       <div>
+        <div class="photo-contain">
+          <img alt="picture" src= <%= album.photos.take.image_url(:thumb)%> class="img-fluid photo1">
+          <img alt="picture" src= <%= album.photos.take.image_url(:thumb)%> class="img-fluid photo2">
+          <img alt="picture" src= <%= album.photos.take.image_url(:thumb)%> class="img-fluid photo3">
+        </div>
+      </div>
+       <i class=" edit-lock-album"><%= link_to  "Edit", edit_album_path(album), class: "edit-lock-1" %></i>
+        <p class="photo-size">
+          <p class="photo-size-count"> <%= album.photos.size%></p>
+          <p class="photo-size-p"> Photos</p>
+        </p>
+         <% if album.status?%>
+          <i class="fas fa-unlock-alt lock-album"></i>
+        <% else%>
+         <i class="fas fa-lock lock-album"></i> 
+        <%end%>
           <h4> <%= album.title%></h4>
       </div>
       <%end%>
+
+
     </div>
   </div>
 </div>
