@@ -1,7 +1,7 @@
 <div class="container-fluid cus-body-color">
   <div class="row">
     <div class="col-12 col-sm-2 sticky-top ">
-      <ul class="list mt-4 submenu  sticky-top">
+      <ul class="list mt-4 submenu ">
         <li><%= link_to "Feed",  photos_path, class: 'feed-submenu' %></li>
         <li><%= link_to "Discover",  photos_path, class: 'discover-submenu' %></li>
       </ul>
@@ -26,12 +26,16 @@
 
                 <div class="col-md-12 col-lg-5">
                   <div class="card-body cus-body">
+                 
                     <div  class="user d-flex">
                         <div class="image"> 
-                          <%=photo.user.fname.slice(0)+photo.user.lname.slice(0)%>
+                          <%=photo.user.fname.slice(0)+photo.user.lname.slice(0)%>    
                         </div>
+                         <%= link_to profiles_show_path(photo.user.id) do %> 
                       <span class=" "><%= photo.user.fname%> <%=photo.user.lname %></span>
-                    </div>  
+                      <% end%>  
+                    </div>
+                     
                     <h5 class="card-title custitle" ><%= photo.title%></h5>
                     <p class="card-text cusdesc " ><%= photo.desc%></p>
                   </div>

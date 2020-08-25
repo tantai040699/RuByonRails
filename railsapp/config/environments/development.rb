@@ -78,5 +78,5 @@ Rails.application.configure do
   enable_starttls_auto: true }
 
 
-
+  config.public_file_server.enabled 
 end

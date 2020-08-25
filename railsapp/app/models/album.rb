@@ -1,5 +1,5 @@
 class Album < ApplicationRecord
-    has_many :albums_photos
+    has_many :albums_photos,dependent: :destroy
     has_many :photos, through: :albums_photos
    
     belongs_to :user, counter_cache: :albums_count
@@ -12,4 +12,4 @@ class Album < ApplicationRecord
     # validates :desc, length: {maximum:300}
     # validates :collection, numericality: {more_than: 1, less_than:25}
 
-end
+end 

@@ -16,11 +16,14 @@ Rails.application.routes.draw do
   # resources :user_login, only: :index
   # # Photo, ALbums Controller :
   resources :photos , :albums
-  get 'profiles/index', to: 'profiles#index'
+  # get 'profiles/photo', to: 'profiles#index', as: 'profiles/photo'
+  get 'profiles/albums/:id', to: 'profiles#show_albums', as: 'profiles/album'
+  get 'profiles/show/:id', to: 'profiles#show', as: 'profiles/show'
 
-  get 'follows/follower', to: 'follows#show_follower'
-  get 'follows/following', to: 'follows#show_following'
-
+  get 'profiles/following/:id', to: 'profiles#show_following', as: 'profiles/following'
+  get 'profiles/follower/:id', to: 'profiles#show_follower', as: 'profiles/follower'
+  post 'profiles/following-connect/:id', to: 'profiles#follow_connect', as: 'profile/following-connect'
+  delete 'profiles/following-delete/:id', to: 'profiles#follow_destroy', as:'profile/following-delelte'
   # #feed,discovery Controller : homepage
   # get 'feed', to 'homepage#index'
   # get 'discovery', to 'homepage#discovery'

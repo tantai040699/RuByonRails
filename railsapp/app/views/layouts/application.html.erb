@@ -32,10 +32,10 @@
         </div>
         <div class="navbar-brand customer">
         <% if user_signed_in? %>
-          <%= link_to profiles_index_path do  %>
+          <%= link_to profiles_show_path(current_user.id) do  %>
             <%= image_tag  current_user.avatar_url(:icon) ,class: 'rounded-circle' %>
             <div class=" customer-name">
-              <%= current_user.fname  %> <%= current_user.lname %>
+              <%= current_user.lname  %> <%= current_user.fname %>
             </div>
             <% end %> 
         </div>

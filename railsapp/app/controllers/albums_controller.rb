@@ -11,10 +11,10 @@ class AlbumsController < ApplicationController
     end
 
     def create
-      @album = current_user.albums.create params_album
-      @photo = current_user.photos.create params_photo
+      @album = current_user.albums.new params_album
+      @photo = current_user.photos.new params_photo
       @rela= @album.albums_photos.new(photo: @photo)
-      if @rela.save
+      if @rela.save && @album.save  && @photo.save
         @album.update_attribute(:collection,1)
         flash[:success] = "Upload album success"
         redirect_to albums_path
@@ -50,7 +50,7 @@ class AlbumsController < ApplicationController
       end
 
       def params_album
-        params.require(:album ).permit(:title,:desc,:collection,:status)
+        params.require(:album ).permit(:title,:desc,:status)
       end
       def params_photo
         params.require(:album ).permit(:title, :desc,:status,:image)

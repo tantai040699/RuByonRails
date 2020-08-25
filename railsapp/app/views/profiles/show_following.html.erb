@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="row pt-1 out-card">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-12">
+        <ul class="list mt-4 submenu ">
+        <li><%= link_to "Feed",  photos_path, class: 'feed-submenu' %></li>
+        <li><%= link_to "Discover",  photos_path, class: 'discover-submenu' %></li>
+      </ul>
+    </div>
+    <div class="col-lg-8 col-md-11 col-sm-11 col-12 p-0 mid-col mb-4">
+      <div class="row p-5">
+        <div class="col-lg-12 col-md-12 col-12">
+          <div class="info-top">
+            <div class="row">
+              <div class="col-lg-3 col-3">
+                <div class="avatar">
+                  <img src= <%= @user.avatar_url%> alt="">
+                </div>
+              </div>
+              <div class="col-lg-9 col-9 p-0">
+                <div class="col-lg-12 col-12">
+                  <div class="following">
+                  <% if @user == current_user%>
+                    <div class="custom-btn">Edit profile</div>
+                    <%else%>
+                    <div class="custom-btn">Follow</div>
+                    <%end%>
+                  </div>
+                </div>
+              <div class="col-lg-12 col-12 mt-4">
+                <div class="name pt-2">
+                  <h1><%= @user.lname%>&nbsp;<%=@user.fname%></h1>
+                </div>
+              </div>
+              <div class="col-lg-12 col-12 mt-3 d-flex">
+               <ul class= profiles-link>            
+                  <li> <%=@user.photos_count %>  <%= link_to 'Photos',profiles_show_path(@user.id) %>&nbsp;&verbar;</li>
+                  <li> <%=@user.albums_count %>  <%= link_to 'ALbums',profiles_album_path(@user.id) %>&nbsp;&verbar;</li>
+                  <li> <%=@user.following_count %>  <%= link_to 'Following',profiles_following_path(@user.id) %>&nbsp;&verbar;</li>
+                  <li> <%=@user.follower_count %>  <%= link_to 'Follower',profiles_follower_path(@user.id) %>&nbsp;&verbar;</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="col-lg-12 col-md-12 col-12 mt-4">
+      <div class="row">
+      <% @follower.each do |follow|%>
+        <div class="col-12 col-md-3">
+            <div class="items mt-3 mb-3">
+                <div class="avatar mb-1">
+                    <img src="https://picsum.photos/300" alt="">
+                </div>
+                <div class="name mb-2">Hai Nguyen</div>
+                <div class="number d-flex justify-content-between">
+                    <div class="photo">
+                        <span class="number">22</span>
+                        <span class="type">photo</span>
+                    </div>
+
+                    <div class="album mb-2">
+                        <span class="number">105</span>
+                        <span class="type">album</span>
+                    </div>
+                </div>
+                <div class="flw">
+                    <button class="custom-btn-following" type="button">following</button>
+                </div>
+            </div>
+        </div>
+      <%end%>
+    </div>
+    </div>
+  </div>
+</div>
