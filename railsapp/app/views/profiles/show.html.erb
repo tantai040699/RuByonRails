@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <div class="row pt-1 out-card">
     <div class="col-lg-2 col-md-2 col-sm-2 col-12">
-        <ul class="list mt-4 submenu ">
+      <ul class="list mt-4 submenu ">
         <li><%= link_to "Feed",  photos_path, class: 'feed-submenu' %></li>
-        <li><%= link_to "Discover",  photos_path, class: 'discover-submenu' %></li>
+        <li><%= link_to "Discover",  discover_photos_path, class: 'discover-submenu' %></li>
       </ul>
     </div>
     <div class="col-lg-8 col-md-11 col-sm-11 col-12 p-0 mid-col mb-4">
@@ -19,60 +19,66 @@
               <div class="col-lg-9 col-9 p-0">
                 <div class="col-lg-12 col-12">
                   <div class="following">
-                  <% if @user == current_user%>
-                    <div class="custom-btn">Edit profile</div>
+                    <% if @user == current_user%>
+                      <%= link_to edit_user_registration_path do %>
+                      <div class="custom-btn">Edit profile</div>
+                      <%end%>   
                     <%else%>
-                       <% if @user.following.include? current_user%>
-                           <div class="custom-btn"> <%= link_to  "Unfollow", profile_following_delelte_path, method: :delete %></div>
+                      <% if @user.following.include? current_user%>
+                        <div class="custom-btn"> <%= link_to  "Unfollow", profile_following_delelte_path, method: :delete %></div>
                       <%else%>
-                           <div class="custom-btn"> <%= link_to  "Follow", profile_following_connect_path,  method: :post%></div>
+                        <div class="custom-btn"> <%= link_to  "Follow", profile_following_connect_path,  method: :post%></div>
                       <%end%>
                     <%end%>
-                  </div>
                 </div>
+              </div>
               <div class="col-lg-12 col-12 mt-4">
                 <div class="name pt-2">
                   <h1><%= @user.lname%>&nbsp;<%=@user.fname%></h1>
                 </div>
               </div>
               <div class="col-lg-12 col-12 mt-3 d-flex">
-               <ul class= profiles-link>            
+                <ul class= profiles-link>            
                   <li> <%=@user.photos_count %>  <%= link_to 'Photos',profiles_show_path(@user.id) %>&nbsp;&verbar;</li>
                   <li> <%=@user.albums_count %>  <%= link_to 'ALbums',profiles_album_path(@user.id) %>&nbsp;&verbar;</li>
                   <li> <%=@user.following_count %>  <%= link_to 'Following',profiles_following_path(@user.id) %>&nbsp;&verbar;</li>
                   <li> <%=@user.follower_count %>  <%= link_to 'Follower',profiles_follower_path(@user.id) %>&nbsp;&verbar;</li>
                 </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <% if @user == current_user%>
-    <div class="col-lg-12 col-md-12 col-12 mt-2">
-      <div class="following addphoto-but">
+    <% if @user == current_user%> 
+      <div class="col-lg-12 col-md-12 col-12 mt-2">
+        <div class="following addphoto-but">
           <%= link_to new_photo_path do %>
             <div class="custom-btn-addphoto">Add photo</div>
-           <%end%>
+          <%end%>
         </div>
-    </div>
-    <%end%>
-     <div class="col-lg-12 col-md-12 col-12 mt-4">
-      <div class="row">
-      <% @user.photos.each do |photo|%>
-       <div class="col-12 col-md-3">
-       <i class=" edit-lock"><%= link_to  "Edit", edit_photo_path(photo), class: "edit-lock-1" %></i>
-       
-         <img alt="picture" src= <%= photo.image_url(:thumb)%> class="img-fluid">
-
-        <% if photo.status?%>
-          <i class="fas fa-unlock-alt lock"></i>
-        <% else%>
-         <i class="fas fa-lock lock"></i> 
-        <%end%>
-          <h4> <%= photo.title%></h4>
       </div>
-      <%end%>
-    </div>
+    <%end%>
+      <div class="col-lg-12 col-md-12 col-12 mt-4">
+        <div class="row">
+          <% @user.photos.each do |photo|%>
+            <% if @user== current_user%>
+              <div class="col-12 col-md-3">
+                <i class=" edit-lock"><%= link_to  "Edit", edit_photo_path(photo), class: "edit-lock-1" %></i>
+                <img alt="picture" src= <%= photo.image_url(:thumb)%> class="img-fluid">
+                <% if photo.status?%>
+                  <i class="fas fa-unlock-alt lock"></i>
+                <% else%>
+                  <i class="fas fa-lock lock"></i> 
+                <%end%>
+                <h4> <%= photo.title%></h4>
+             </div>
+            <%else%>
+              <% if photo.status?%>
+                <img alt="picture" src= <%= photo.image_url(:thumb)%> class="img-fluid">
+              <%end%>
+            <%end%>
+          <%end%>
+        </div>
+      </div>
     </div>
   </div>
-</div>

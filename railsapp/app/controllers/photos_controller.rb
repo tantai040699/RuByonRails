@@ -1,14 +1,13 @@
 class PhotosController < ApplicationController
-  before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :find_id_photo, only: [:edit,:update,:destroy]
-
+  
   def index
-    @photo = Photo.where("status = ?",'1').order(:created_at).includes(:user).page params[:page]
+    # @id_user = current_user.id
+    # @photo= Photo.joins("INNER JOIN follows ON follows.follower_id = user_id AND follows.followed_id= @id_user" ).page params[:page]
+    @photo = Photo.where("status = ?",'1').order(:created_at).includes(:user,:reactions).page params[:page]
   end
-  
-  def show
-  
-  end
+
   def new
     @photo = Photo.new
   end
@@ -38,7 +37,7 @@ class PhotosController < ApplicationController
   
   def destroy
     @photo.destroy
-    redirect_to profiles_index_path
+    redirect_to profiles_show_path(current_user.id)
   end
   private
   def params_photo

@@ -3,7 +3,7 @@
     <div class="col-lg-2 col-md-2 col-sm-2 col-12">
         <ul class="list mt-4 submenu ">
         <li><%= link_to "Feed",  photos_path, class: 'feed-submenu' %></li>
-        <li><%= link_to "Discover",  photos_path, class: 'discover-submenu' %></li>
+        <li><%= link_to "Discover",  discover_photos_path, class: 'discover-submenu' %></li>
       </ul>
     </div>
     <div class="col-lg-8 col-md-11 col-sm-11 col-12 p-0 mid-col mb-4">
@@ -55,7 +55,11 @@
                 <div class="avatar mb-1">
                     <img src="https://picsum.photos/300" alt="">
                 </div>
-                <div class="name mb-2"><%= follow.lname %><%= follow.fname%></div>
+                <div class="name mb-2">
+                <%= link_to profiles_show_path(follow.id) do %>
+                <%= follow.lname %><%= follow.fname%>
+                 <%end%>
+                </div>
                 <div class="number d-flex justify-content-between">
                     <div class="photo">
                         <span class="number"><%= follow.photos_count %></span>

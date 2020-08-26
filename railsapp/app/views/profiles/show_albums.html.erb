@@ -3,7 +3,7 @@
      <div class="col-lg-2 col-md-2 col-sm-2 col-12">
         <ul class="list mt-4 submenu ">
         <li><%= link_to "Feed",  photos_path, class: 'feed-submenu' %></li>
-        <li><%= link_to "Discover",  photos_path, class: 'discover-submenu' %></li>
+        <li><%= link_to "Discover",  discover_photos_path, class: 'discover-submenu' %></li>
       </ul>
     </div>
     <div class="col-lg-8 col-md-11 col-sm-11 col-12 p-0 mid-col mb-4">
@@ -60,29 +60,43 @@
 
       <div class="row">
       <% @albums.each do |album|%>
-       <div class="col-12 col-md-3 mt-3">
-       <div>
-        <div class="photo-contain">
-          <img alt="picture" src= <%= album.photos.take.image_url(:thumb)%> class="img-fluid photo1">
-          <img alt="picture" src= <%= album.photos.take.image_url(:thumb)%> class="img-fluid photo2">
-          <img alt="picture" src= <%= album.photos.take.image_url(:thumb)%> class="img-fluid photo3">
-        </div>
-      </div>
-       <i class=" edit-lock-album"><%= link_to  "Edit", edit_album_path(album), class: "edit-lock-1" %></i>
-        <p class="photo-size">
-          <p class="photo-size-count"> <%= album.photos.size%></p>
-          <p class="photo-size-p"> Photos</p>
-        </p>
-         <% if album.status?%>
-          <i class="fas fa-unlock-alt lock-album"></i>
+        <% if @user == current_user%>
+          <div class="col-12 col-md-3 mt-3">
+          <div>
+            <div class="photo-contain">
+              <img alt="picture" src= <%= album.photos.take.image_url(:medium)%> class="img-fluid photo1">
+              <img alt="picture" src= <%= album.photos.take.image_url(:medium)%> class="img-fluid photo2">
+              <img alt="picture" src= <%= album.photos.take.image_url(:medium)%> class="img-fluid photo3">
+            </div>
+          </div>   
+          <i class=" edit-lock-album"><%= link_to  "Edit", edit_album_path(album), class: "edit-lock-1" %></i>
+          <p class="photo-size">
+            <p class="photo-size-count"> <%= album.photos_count%></p>
+            <p class="photo-size-p"> Photos</p>
+          </p>
+          <% if album.status?%>
+            <i class="fas fa-unlock-alt lock-album"></i>
+          <% else%>
+            <i class="fas fa-lock lock-album"></i> 
+          <%end%>
+
         <% else%>
-         <i class="fas fa-lock lock-album"></i> 
-        <%end%>
-          <h4> <%= album.title%></h4>
+          <div class="col-12 col-md-3 mt-3">
+          <div>
+            <div class="photo-contain">
+              <img alt="picture" src= <%= album.photos.take.image_url(:medium)%> class="img-fluid photo1">
+              <img alt="picture" src= <%= album.photos.take.image_url(:medium)%> class="img-fluid photo2">
+              <img alt="picture" src= <%= album.photos.take.image_url(:medium)%> class="img-fluid photo3">
+            </div>
+          </div>
+          <p class="photo-size">
+            <p class="photo-size-count"> <%= album.photos_count%></p>
+            <p class="photo-size-p"> Photos</p>
+          </p>
+         <%end%>
+        <h4> <%= album.title%></h4>
       </div>
-      <%end%>
-
-
+    <%end%>
     </div>
   </div>
 </div>

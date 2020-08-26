@@ -1,4 +1,4 @@
 class AlbumsPhoto < ApplicationRecord
-    belongs_to :album
-    belongs_to :photo 
+    belongs_to :album,counter_cache:  :photos_count
+    belongs_to :photo
 end

@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :find_id_album, only: [:show,:edit, :update, :destory]
+  skip_before_action :authenticate_user!, only: [:index]
+  before_action :find_id_album, only: [:show,:edit, :update, :destory,:add]
 
     def index
       @albums = Album.where("status = ?",'1').order(:created_at).includes(:user,:photos).page params[:page]
@@ -9,7 +9,7 @@ class AlbumsController < ApplicationController
     def new
       @album =Album.new
     end
-
+    
     def create
       @album = current_user.albums.new params_album
       @photo = current_user.photos.new params_photo
@@ -29,19 +29,22 @@ class AlbumsController < ApplicationController
     end
 
     def edit
-      
+      @photo = @album.photos.all
     end
     
     def update
-      if @album.update(params_update)
+      @photo = current_user.photos.new params_photo
+      @rela= @album.albums_photos.new(photo: @photo)
+      if @album.update(params_album) &&  @rela.save
         flash[:success] = 'The album has just updated'
-        redirect_to albums_path
+        redirect_to profiles_album_path(current_user)
       else
-        render 'edit'  
+        render 'edit'
       end
     end
-    def destroy
     
+    def destroy
+      @album.destroy
     end
   
     private

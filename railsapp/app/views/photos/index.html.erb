@@ -3,7 +3,7 @@
     <div class="col-12 col-sm-2 sticky-top ">
       <ul class="list mt-4 submenu ">
         <li><%= link_to "Feed",  photos_path, class: 'feed-submenu' %></li>
-        <li><%= link_to "Discover",  photos_path, class: 'discover-submenu' %></li>
+        <li><%= link_to "Discover",  discover_photos_path, class: 'discover-submenu' %></li>
       </ul>
     </div>
     <div class="col-12 col-sm-8 pt-4 cus-card-color">
@@ -21,7 +21,7 @@
             <div class="card mb-3 shadow" style="max-width: 540px;">
               <div class="row no-gutters">
                 <div class="col-md-12 col-lg-7">
-                  <img src=<%= photo.image%> class="card-img cus" alt="..." data-toggle="modal" data-target="#mod">
+                  <img src=<%= photo.image_url(:thumb)%> class=" cus" alt="..." data-toggle="modal" data-target="#mod">
                 </div>
 
                 <div class="col-md-12 col-lg-5">
@@ -40,7 +40,17 @@
                     <p class="card-text cusdesc " ><%= photo.desc%></p>
                   </div>
                   <div>
-                    <i class="far fa-heart fa-1x">&nbsp;123</i>
+                  <% if user_signed_in? %>
+                      <% if photo.reactions.exists? user_id: current_user.id%>
+                        <%= link_to reactions_unreact_photo_path(photo.id) do %>
+                          <i class="fas fa-heart fa-1x">&nbsp;123</i>
+                        <% end%> 
+                      <%else%>
+                        <%= link_to reactions_react_photo_path(photo.id) do %>
+                          <i class="far fa-heart fa-1x">&nbsp;123</i>
+                        <% end%> 
+                      <% end%> 
+                  <% end%> 
                     <i class="card-text"><small class="cusdate pt-1"><%= photo.created_at%></small></i>
                   </div>
                 </div>

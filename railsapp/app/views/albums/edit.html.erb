@@ -1,17 +1,48 @@
 <div class="container">
+    <div class="card ">
+        <div class="row photos_to_albums">
+            <div class="col-sm-8">
+                <%= form_for @album, html: {class: "form-horizontal"} do |f| %>
+                    <div class="form-group">
+                            <%= f.label :title, "Title of Picture", class: "col-md-2 control-label" %>
+                        <div class="col-md-10">
+                            <%= f.text_field :title, class: "form-control", placeholder: "Enter title" %>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <%= f.label :desc, "Description", class: "col-md-2 control-label" %>
+                        <div class="col-md-10">
+                            <%= f.text_field :desc, class: "form-control", placeholder: "Enter description" %>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="picture">
+                            <%= f.file_field :image, accept: "image/jpeg, image/gif, image/png, image/jpg" %>
+                        </div>
+                    </div>
 
-  <div>
-    <% @album.errors.full_messages.each do |msg|%>
+                    <%= f.select :status, options_for_select([["Public", "1"],["Private", "0"] ]), :class => 'genForm_dropBox' %>
 
-    <h4> <%=msg %></h4>
 
-    <% end %>
-  </div>
-
-  <div class="card edit-albums-form">
-      <%= form_for @album, method: :put do |f| %>
-        Title: <%= f.text_field :title %> <br>
-        <%= f.submit%>
-      <% end %>
-  </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <%= f.submit "Update", class: "btn btn-success" %>
+                        </div>
+                    </div>
+                    
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <% @photo.each do |photo|%>
+            <div class="col-12 col-sm-4 photos_to_albums">
+                <img src=<%=photo.image%>>
+                <div> <%= link_to  "Delete", photos_destroy_path(photo.id), method: :delete  %></div>
+               
+            </div>
+        <% end %>
+    </div>
 </div>

@@ -3,7 +3,7 @@
     <div class="col-12 col-sm-2 sticky-top ">
       <ul class="list mt-4 submenu  sticky-top">
         <li><%= link_to "Feed",  photos_path, class: 'feed-submenu' %></li>
-        <li><%= link_to "Discover",  photos_path, class: 'discover-submenu' %></li>
+        <li><%= link_to "Discover",  discover_photos_path, class: 'discover-submenu' %></li>
       </ul>
     </div>
     <div class="col-12 col-sm-8 pt-4 cus-card-color">
@@ -32,13 +32,25 @@
                         <div class="image"> 
                           <%=album.user.fname.slice(0)+album.user.lname.slice(0)%>
                         </div>
+                      <%= link_to profiles_show_path(album.user.id) do %> 
                       <span class=" "><%= album.user.fname%> <%=album.user.lname %></span>
+                      <% end%>  
                     </div>  
                     <h5 class="card-title custitle" ><%= album.title%></h5>
                     <p class="card-text cusdesc " ><%= album.desc%></p>
                   </div>
                   <div>
-                    <i class="far fa-heart fa-1x">&nbsp;123</i>
+                  <% if user_signed_in? %>
+                    <% if album.reactions.exists? user_id: current_user.id%>
+                        <%= link_to reactions_unreact_album_path(album.id) do %>
+                          <i class="fas fa-heart fa-1x">&nbsp;123</i>
+                        <% end%> 
+                      <%else%>
+                        <%= link_to reactions_react_album_path(album.id) do %>
+                          <i class="far fa-heart fa-1x">&nbsp;123</i>
+                        <% end%> 
+                      <% end%> 
+                  <% end%>
                     <i class="card-text"><small class="cusdate pt-1"><%= album.created_at%></small></i>
                   </div>
                 </div>

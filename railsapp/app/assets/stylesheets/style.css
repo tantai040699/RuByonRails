@@ -409,7 +409,7 @@ body {
 
 .lock {
     position: absolute;
-    right: 110px;
+    right: 40px;
     top:10px;
     background: #FFF;
     padding: 5px;
@@ -418,7 +418,7 @@ body {
 }
 .edit-lock {
     position: absolute;
-    right: 100px;
+    right: 30px;
     bottom: 35px;
     background-color: #FFF;
     color:black !important;
@@ -431,16 +431,17 @@ body {
 .edit-lock-1 {
     color: black;
     padding-left: 3px;
+    text-decoration: none;
 }
 .photo-contain {
     position: relative;
-    min-height: 230px;
+    min-height: 260px;
 }
 .lock-album {
     position: absolute;
     z-index: 100;
     top: 20px;
-    right: 80px;
+    right: 60px;
     background: #FFF;
     padding: 5px;
     border-radius: 50%;
@@ -448,7 +449,7 @@ body {
 .photo-size {
     position: absolute;
     top: 75px;
-    left: 94px;
+    left: 100px;
     z-index: 100;
     background: black;
     height: 110px;
@@ -459,22 +460,22 @@ body {
 .photo-size-count {
     position: absolute;
     top: 100px;
-    left: 145px;
+    left: 150px;
     z-index: 100;
     color: #FFF;
 }
 .photo-size-p {
     position: absolute;
     top: 120px;
-    left: 115px;
+    left: 120px;
     font-size: 23px;
     z-index: 100;
     color: #FFF;
 }
 .edit-lock-album {
     position: absolute;
-    bottom: 50px;
-    right: 80px;
+    right: 70px;
+    bottom: 55px;
     background-color: #FFF;
     color:black !important;
     border-radius: 50px;

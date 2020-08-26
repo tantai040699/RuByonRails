@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_21_080031) do
+ActiveRecord::Schema.define(version: 2020_08_25_160613) do
 
   create_table "albums", force: :cascade do |t|
     t.integer "user_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_08_21_080031) do
     t.boolean "status", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "photos_count", default: 0, null: false
     t.index ["user_id"], name: "index_albums_on_user_id"
   end
 
@@ -51,10 +52,12 @@ ActiveRecord::Schema.define(version: 2020_08_21_080031) do
   end
 
   create_table "reactions", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "react_id"
     t.string "react_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_reactions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

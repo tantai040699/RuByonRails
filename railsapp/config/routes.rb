@@ -1,34 +1,34 @@
 Rails.application.routes.draw do
 
-  
+  #devise login signup
   devise_for :users
-  # devise_scope :user do
-  #  get:'devise/sessions#new'
-  # end
-  root 'photos#index'
-  get 'new', to: 'photos#new'
 
-  # get 'user_login/index'
-  # get  'user_sign_up/index'
-  #User Signup Controller :
-  # resources :user_sign_up, only: :create
-  # # #User Login Controller :
-  # resources :user_login, only: :index
-  # # Photo, ALbums Controller :
+  #root
+  root 'photos#index'
+
+  #photos
+  get 'new', to: 'photos#new'
+  delete 'photos/:id', to: 'photos#destroy', as: 'photos/destroy'
+  
+  #albums
+  get "albums/add/:id", to: "albums#add", as: 'albums/add'
+  #photos, albums
   resources :photos , :albums
-  # get 'profiles/photo', to: 'profiles#index', as: 'profiles/photo'
+  # profiles
   get 'profiles/albums/:id', to: 'profiles#show_albums', as: 'profiles/album'
   get 'profiles/show/:id', to: 'profiles#show', as: 'profiles/show'
-
   get 'profiles/following/:id', to: 'profiles#show_following', as: 'profiles/following'
   get 'profiles/follower/:id', to: 'profiles#show_follower', as: 'profiles/follower'
   post 'profiles/following-connect/:id', to: 'profiles#follow_connect', as: 'profile/following-connect'
   delete 'profiles/following-delete/:id', to: 'profiles#follow_destroy', as:'profile/following-delelte'
-  # #feed,discovery Controller : homepage
-  # get 'feed', to 'homepage#index'
-  # get 'discovery', to 'homepage#discovery'
+  
+  #reaction
+  get "reactions/react-photo/:id", to: "reactions#react_photo", as: 'reactions/react-photo'
+  get "reactions/unreact-photo/:id", to: "reactions#unreact_photo", as: 'reactions/unreact-photo'
+  get "reactions/react-album/:id", to: "reactions#react_album", as: 'reactions/react-album'
+  get "reactions/unreact-album/:id", to: "reactions#unreact_album", as: 'reactions/unreact-album'
 
-  # #Profile Controller : profile
-  # get 'profile', to 'profile#index'
-
+  #discover
+  get "discover/photos", to: "discover#show_photos", as: 'discover/photos'
+  get "discover/albums", to: "discover#show_albums", as: 'discover/albums'
 end
