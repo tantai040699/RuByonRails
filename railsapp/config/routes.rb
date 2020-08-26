@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   #devise login signup
   devise_for :users
+  #edit-user
+  post "users/edit_profiles", to: "users#edit_profiles",as: 'users/edit_profiles'
 
   #root
   root 'photos#index'

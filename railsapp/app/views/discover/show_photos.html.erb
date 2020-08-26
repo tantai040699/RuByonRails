@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-12 col-sm-2 sticky-top ">
       <ul class="list mt-4 submenu ">
-        <li><%= link_to "Feed",  photos_path, class: 'feed-submenu' %></li>
-        <li><%= link_to "Discover",  photos_path, class: 'discover-submenu' %></li>
+        <li><%= link_to "Feed",  photos_path, class: 'discover-submenu' %></li>
+        <li><%= link_to "Discover",  discover_photos_path, class: 'feed-submenu' %></li>
       </ul>
     </div>
     <div class="col-12 col-sm-8 pt-4 cus-card-color">
@@ -29,11 +29,17 @@
                  
                     <div  class="user d-flex">
                         <div class="image"> 
-                          <%=photo.user.fname.slice(0)+photo.user.lname.slice(0)%>    
+                          <%=photo.user.fname.slice(0)+photo.user.lname.slice(0)%>
                         </div>
                          <%= link_to profiles_show_path(photo.user.id) do %> 
                       <span class=" "><%= photo.user.fname%> <%=photo.user.lname %></span>
-                      <% end%>  
+                      <% end%>
+                      
+                        <% if photo.user.following.include? current_user%>
+                           <div class="custom-btn-following"> <%= link_to  "Unfollow", profile_following_delelte_path(photo.user_id), method: :delete %></div>
+                        <%else%>
+                           <div class="custom-btn-following"> <%= link_to  "Follow", profile_following_connect_path(photo.user_id),  method: :post%></div>
+                        <%end%>
                     </div>
                      
                     <h5 class="card-title custitle" ><%= photo.title%></h5>

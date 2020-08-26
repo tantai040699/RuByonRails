@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-12 col-sm-2 sticky-top ">
       <ul class="list mt-4 submenu  sticky-top">
-        <li><%= link_to "Feed",  photos_path, class: 'feed-submenu' %></li>
-        <li><%= link_to "Discover",  discover_photos_path, class: 'discover-submenu' %></li>
+        <li><%= link_to "Feed",  photos_path,class: 'discover-submenu' %></li>
+        <li><%= link_to "Discover",  discover_photos_path,class: 'feed-submenu'  %></li>
       </ul>
     </div>
     <div class="col-12 col-sm-8 pt-4 cus-card-color">
@@ -16,7 +16,7 @@
 
       <div class="container cus-main op">
         <div class="row mt-4">
-          <% @albums.find_each do |album|%>
+          <% @albums.each do |album|%>
           <div class="col-12 col-sm-12 col-md-12 col-lg-6 photo-container">
             <div class="card mb-3 shadow" style="max-width: 540px;">
               <div class="row no-gutters">
