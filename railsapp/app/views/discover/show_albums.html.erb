@@ -43,11 +43,11 @@
                   <% if user_signed_in? %>
                     <% if album.reactions.exists? user_id: current_user.id%>
                         <%= link_to reactions_unreact_album_path(album.id) do %>
-                          <i class="fas fa-heart fa-1x">&nbsp;123</i>
+                          <i class="fas fa-heart fa-1x">&nbsp;<%= album.reactions.size%></i>
                         <% end%> 
                       <%else%>
                         <%= link_to reactions_react_album_path(album.id) do %>
-                          <i class="far fa-heart fa-1x">&nbsp;123</i>
+                          <i class="far fa-heart fa-1x">&nbsp;<%= album.reactions.size%></i>
                         <% end%> 
                       <% end%> 
                   <% end%>
