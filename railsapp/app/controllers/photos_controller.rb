@@ -3,9 +3,15 @@ class PhotosController < ApplicationController
   before_action :find_id_photo, only: [:edit,:update,:destroy]
   
   def index
-    # @id_user = current_user.id
-    # @photo= Photo.joins("INNER JOIN follows ON follows.follower_id = user_id AND follows.followed_id= @id_user" ).page params[:page]
-    @photo = Photo.where("status = ?",'1').order(:created_at).includes(:user,:reactions).page params[:page]
+    if current_user
+      @photo= Photo.joins("INNER JOIN follows ON follows.follower_id = user_id").where("follows.followed_id = :id", id: current_user.id).page params[:page]
+      # @photo = Photo.where("status = ?",'1').order(:created_at).includes(:user,:reactions).page params[:page]
+    else
+      @photo = Photo.where("status = ?",'1').order(:created_at).includes(:user,:reactions).page params[:page]
+    end
+
+   
+    
   end
 
   def new
