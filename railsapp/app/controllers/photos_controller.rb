@@ -4,14 +4,10 @@ class PhotosController < ApplicationController
   
   def index
     if current_user
-      @photo= Photo.joins("INNER JOIN follows ON follows.follower_id = user_id").where("follows.followed_id = :id", id: current_user.id).page params[:page]
-      # @photo = Photo.where("status = ?",'1').order(:created_at).includes(:user,:reactions).page params[:page]
+      @photos= Photo.joins("INNER JOIN follows ON follows.follower_id = user_id").where("follows.followed_id = :id", id: current_user.id).page params[:page]
     else
-      @photo = Photo.where("status = ?",'1').order(:created_at).includes(:user,:reactions).page params[:page]
+      @photos= Photo.where("status = ?",'1').order(:created_at).includes(:user,:reactions).page params[:page]
     end
-
-   
-    
   end
 
   def new
@@ -19,13 +15,12 @@ class PhotosController < ApplicationController
   end
 
   def create
-
     @photo = current_user.photos.new params_photo
     if @photo.save
       flash[:success] = "Upload success"
       redirect_to photos_path
     else
-      flash[:success] = "Register failed"
+      flash[:danger] = "Register failed"
       render :new
     end
   end
